@@ -1618,7 +1618,6 @@ table img {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
 }
 
 .andro_search-adv-cats label {
@@ -4160,9 +4159,11 @@ td.remove {
     background-image: url(../img/banner.png);
     background-position: calc(100% + 110px) 0;
 }
-.banner-3.andro_banner .slick-slide .row{
+
+.banner-3.andro_banner .slick-slide .row {
     flex-direction: row-reverse;
 }
+
 /* 6.6. Icon Blocks */
 .andro_icon-block {
     padding: 20px;
@@ -5204,47 +5205,56 @@ td.remove {
 .andro_rating i.active {
     color: #ffa80a;
 }
+
 /*book-sponsers-sec*/
-.book-sponsers-sec{
+.book-sponsers-sec {
     padding: 50px 0;
     background-color: #5191fa;
 }
-.book-sponsers-sec>div{
+
+.book-sponsers-sec>div {
     border-top: 1px solid #eaeaea;
     border-bottom: 1px solid #eaeaea;
 }
-.book-sponsers-sec .slide-item{
+
+.book-sponsers-sec .slide-item {
     margin: 0;
     padding-top: 15px;
     padding-bottom: 15px;
 }
-.book-sponsers-sec .slide-item img{
+
+.book-sponsers-sec .slide-item img {
     transition: 0.3s all;
     filter: grayscale();
 }
-.book-sponsers-sec .slide-item:hover img{
+
+.book-sponsers-sec .slide-item:hover img {
     filter: none;
 }
+
 /*book-main-slider-sec*/
 .book-main-slider-sec,
-.book-main-slider{
+.book-main-slider {
     position: relative;
     z-index: 1;
     overflow: hidden;
 }
-.book-main-slider-sec .slide-item{
+
+.book-main-slider-sec .slide-item {
     position: relative;
     overflow: hidden;
     z-index: 1;
     height: 700px;
 }
-.book-main-slider-sec .slide-item img{
+
+.book-main-slider-sec .slide-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
-.book-main-slider-sec .book-banner-text{
+
+.book-main-slider-sec .book-banner-text {
     position: absolute;
     top: 50%;
     left: 0;
@@ -5252,6 +5262,7 @@ td.remove {
     transform: translate(0%, -50%);
     z-index: 1;
 }
+
 .book-main-slider-sec .book-banner-text .banner-content {
     position: relative;
     z-index: 1;
@@ -5259,29 +5270,35 @@ td.remove {
     margin: 0 auto;
     text-align: center;
 }
+
 .book-main-slider-sec [data-animation-in] {
     opacity: 0;
     animation-duration: 1.5s;
     transition: opacity 0.5s ease 0.3s;
     transition: 1s;
 }
-.book-main-slider-sec .book-banner-text .banner-content .top-title{
+
+.book-main-slider-sec .book-banner-text .banner-content .top-title {
     color: #1a2b48;
     font-size: 18px;
     font-weight: 600;
 }
-.book-main-slider-sec .book-banner-text .banner-content .title{
+
+.book-main-slider-sec .book-banner-text .banner-content .title {
     font-size: 55px;
     color: #fff;
     line-height: 1.4;
 }
-.overlap-sec{
+
+.overlap-sec {
     margin-top: -80px;
 }
-.overlap-sec .andro_cta-content h4{
+
+.overlap-sec .andro_cta-content h4 {
     font-size: 20px;
 }
-.book-main-slider-sec .slick-arrow{
+
+.book-main-slider-sec .slick-arrow {
     position: absolute;
     top: 50%;
     left: 40px;
@@ -5291,11 +5308,14 @@ td.remove {
     opacity: 1;
     visibility: visible;
 }
-.book-main-slider-sec .slick-arrow.slick-next{
+
+.book-main-slider-sec .slick-arrow.slick-next {
     right: 40px;
     left: auto;
 }
-.book-main-slider-sec .slick-arrow.slick-prev{}
+
+.book-main-slider-sec .slick-arrow.slick-prev {}
+
 /*======================
 8. Repsonsive
 ========================*/
@@ -5460,6 +5480,7 @@ td.remove {
     .pagination {
         margin: 10px 0 30px;
     }
+
     .andro_icon-block svg {
         display: none;
     }
@@ -5849,7 +5870,8 @@ td.remove {
         margin-bottom: 10px;
         max-width: 100%;
     }
-    .book-main-slider-sec .book-banner-text .banner-content .title{
+
+    .book-main-slider-sec .book-banner-text .banner-content .title {
         font-size: 35px;
     }
 

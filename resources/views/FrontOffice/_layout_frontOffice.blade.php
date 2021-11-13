@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookz - Book Shop HTML Template</title>
+    <title>
+        The Book Bay - Meilleure selection & Choix multiple !
+    </title>
     <!-- Vendor Stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/animate.min.css') }}">
@@ -136,13 +138,13 @@
         <div class="sidebar">
             <!-- Popular Categories Start -->
             <div class="sidebar-widget widget-categories-icons">
-                <h5 class="widget-title">Popular Categories</h5>
+                <h5 class="widget-title">Catégories populaires</h5>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="andro_icon-block text-center has-link">
                             <a href="#">
                                 <i class="flaticon-tribune"></i>
-                                <h5>Politics & Affairs</h5>
+                                <h5>Politique</h5>
                             </a>
                         </div>
                     </div>
@@ -150,7 +152,7 @@
                         <div class="andro_icon-block text-center has-link">
                             <a href="#">
                                 <i class="flaticon-artificial-intelligence"></i>
-                                <h5>Fiction</h5>
+                                <h5>Science fiction</h5>
                             </a>
                         </div>
                     </div>
@@ -158,7 +160,7 @@
                         <div class="andro_icon-block text-center has-link">
                             <a href="#">
                                 <i class="flaticon-detective-story"></i>
-                                <h5>Mystery</h5>
+                                <h5>Policier</h5>
                             </a>
                         </div>
                     </div>
@@ -166,7 +168,7 @@
                         <div class="andro_icon-block text-center has-link">
                             <a href="#">
                                 <i class="flaticon-like"></i>
-                                <h5>Love</h5>
+                                <h5>Romance</h5>
                             </a>
                         </div>
                     </div>
@@ -174,7 +176,7 @@
                         <div class="andro_icon-block text-center has-link">
                             <a href="#">
                                 <i class="flaticon-book"></i>
-                                <h5>Sci Fi</h5>
+                                <h5>Histoire</h5>
                             </a>
                         </div>
                     </div>
@@ -182,83 +184,42 @@
                         <div class="andro_icon-block text-center has-link">
                             <a href="#">
                                 <i class="flaticon-book-1"></i>
-                                <h5>Biography</h5>
+                                <h5>Documentaire</h5>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Popular Categories End -->
-            <!-- Popular Tags Start -->
-            <div class="sidebar-widget">
-                <h5 class="widget-title">Popular Tags</h5>
-                <div class="tagcloud">
-                    <a href="#">Electronics</a>
-                    <a href="#">Politics & Affairs</a>
-                    <a href="#">Cricket</a>
-                    <a href="#">Book</a>
-                    <a href="#">Auto & Bike</a>
-                    <a href="#">Fiction</a>
-                    <a href="#">Mystery</a>
-                    <a href="#">Mystery</a>
-                    <a href="#">Beauty & Health</a>
-                    <a href="#">Technology</a>
-                    <a href="#">Health & Fitness</a>
-                </div>
-            </div>
-            <!-- Popular Tags End -->
         </div>
     </aside>
     <div class="andro_aside-overlay aside-trigger-right"></div>
     <!-- Aside (Mobile Navigation) -->
     <aside class="andro_aside andro_aside-left">
-        <a class="navbar-brand" href="index-2.html"> <img src="assets/img/logo.png" alt="logo"> </a>
+        <a class="navbar-brand" href="{{ route('accueil_front_office') }}">
+            <img src="assets/img/logo.png" alt="logo">
+        </a>
         <ul>
-            <li class="menu-item menu-item-has-children">
-                <a href="#">Home Pages</a>
-                <ul class="sub-menu">
-                    <li class="menu-item"> <a href="index-2.html">Home v1</a> </li>
-                    <li class="menu-item"> <a href="home-v2.html">Home v2</a> </li>
-                    <li class="menu-item"> <a href="home-v3.html">Home v3</a> </li>
-                </ul>
+            <li class="menu-item">
+                <a href="{{ route('accueil_front_office') }}">
+                    Accueil
+                </a>
             </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="#">Blog</a>
-                <ul class="sub-menu">
-                    <li class="menu-item menu-item-has-children">
-                        <a href="blog-grid.html">Blog Archive</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"> <a href="blog-grid.html">Grid View</a> </li>
-                            <li class="menu-item"> <a href="blog-list.html">List View</a> </li>
-                            <li class="menu-item"> <a href="blog-masonry.html">Masonry View</a> </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item"> <a href="post-single.html">Blog Single</a> </li>
-                </ul>
+            <li class="menu-item">
+                <a href="">
+                    Ouvrages
+                </a>
             </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="#">Pages</a>
-                <ul class="sub-menu">
-                    <li class="menu-item"> <a href="about-us.html">About Us</a> </li>
-                    <li class="menu-item"> <a href="login.html">Login</a> </li>
-                    <li class="menu-item"> <a href="register.html">Sign Up</a> </li>
-                    <li class="menu-item"> <a href="checkout.html">Checkout</a> </li>
-                    <li class="menu-item"> <a href="cart.html">Cart</a> </li>
-                    <li class="menu-item"> <a href="wishlist.html">Wish List</a> </li>
-                    <li class="menu-item"> <a href="legal.html">Legal</a> </li>
-                    <li class="menu-item"> <a href="error.html">Error 404</a> </li>
-                </ul>
+            <li class="menu-item">
+                <a href="">
+                    Contactez-nous
+                </a>
             </li>
-            <li class="menu-item menu-item-has-children">
-                <a href="#">Shop Pages</a>
-                <ul class="sub-menu">
-                    <li class="menu-item"> <a href="shop-v1.html"> Shop v1 (Default) </a> </li>
-                    <li class="menu-item"> <a href="shop-v2.html"> Shop v2 (Full Width) </a> </li>
-                    <li class="menu-item"> <a href="shop-v3.html"> Shop v3 (No Sidebar) </a> </li>
-                    <li class="menu-item"> <a href="shop-v4.html"> Shop v4 (List view) </a> </li>
-                </ul>
+            <li class="menu-item">
+                <a href="">
+                    A propos
+                </a>
             </li>
-            <li class="menu-item"> <a href="contact-us.html">Contact Us</a> </li>
         </ul>
     </aside>
     <div class="andro_aside-overlay aside-trigger-left"></div>
@@ -269,20 +230,28 @@
             <div class="container">
                 <div class="andro_header-top-inner">
                     <ul class="andro_header-top-sm andro_sm">
-                        <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
-                        <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
-                        <li> <a href="#"> <i class="fab fa-linkedin-in"></i> </a> </li>
-                        <li> <a href="#"> <i class="fab fa-youtube"></i> </a> </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
                     </ul>
                     <ul class="andro_header-top-links">
-                        <li class="menu-item"><a href="login.html"> My Account </a></li>
-                        <li class="menu-item menu-item-has-children">
-                            <a href="#"> <span class="andro_current-currency-text">Currency</span> (USD) </a>
-                            <ul class="sub-menu sub-menu-left">
-                                <li> <a href="#">United States Dollar (USD)</a> </li>
-                                <li> <a href="#">Kuwait Dinar (KWD)</a> </li>
-                                <li> <a href="#">Pound Sterling (GBP)</a> </li>
-                            </ul>
+                        <li class="menu-item">
+                            <a href="">
+                                <i class="fas fa-user-shield"></i>
+                                S'identifier
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -294,69 +263,39 @@
             <div class="container">
                 <nav class="navbar">
                     <!-- Logo -->
-                    <a class="navbar-brand" href="index-2.html"> <img src="assets/img/logo.png" alt="logo"> </a>
+                    <a class="navbar-brand" href="{{ route('accueil_front_office') }}">
+                        <img src="assets/img/logo.png" alt="logo">
+                    </a>
                     <!-- Search Form -->
                     <div class="andro_search-adv">
                         <form method="post">
                             <div class="andro_search-adv-cats">
-                                <span>All Categories</span>
-                                <div class="sub-menu">
-                                    <div class="andro_dropdown-scroll">
-                                        <label>
-                                            <input type="checkbox" name="category1" value="Politics & Affairs">
-                                            Politics & Affairs
-                                            <i class="fas fa-check"></i>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="category2" value="home-care">
-                                            The Book of Love
-                                            <i class="fas fa-check"></i>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="category3" value="Auto & Bike">
-                                            Auto & Bike
-                                            <i class="fas fa-check"></i>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="category4" value="Fiction">
-                                            Fiction
-                                            <i class="fas fa-check"></i>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="category5" value="Mystery">
-                                            Mystery
-                                            <i class="fas fa-check"></i>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="category6" value="baby-kids">
-                                            Home & Garden
-                                            <i class="fas fa-check"></i>
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="category7" value="Beauty & Health">
-                                            Beauty & Health
-                                            <i class="fas fa-check"></i>
-                                        </label>
-                                    </div>
-                                </div>
+                                <span>
+                                    <i class="fas fa-book-reader"></i>
+                                </span>
                             </div>
                             <div class="andro_search-adv-input">
-                                <input type="text" class="form-control" placeholder="Look for History , Novels "
-                                    name="search" value="">
-                                <button type="submit" name="button"><i class="fa fa-search"></i></button>
+                                <input type="text" class="form-control"
+                                    placeholder="Nom de l'auteur, libellé l'ouvrage, livre ..." name="search" value="">
+                                <button type="submit" name="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
                             </div>
                         </form>
                     </div>
                     <div class="andro_header-controls">
                         <ul class="andro_header-controls-inner">
-                            <li class="andro_header-favorites"> <a href="wishlist.html" title="Your Wishlist"> <i
-                                        class="flaticon-like"></i> </a> </li>
+                            <li class="andro_header-favorites">
+                                <a href="" title="Liste de voeux">
+                                    <i class="flaticon-like"></i>
+                                </a>
+                            </li>
                             <li class="andro_header-cart">
-                                <a href="cart.html" title="Your Cart">
+                                <a href="" title="Mon Panier">
                                     <i class="flaticon-shopping-basket"></i>
                                     <div class="andro_header-cart-content">
-                                        <span>9 Items</span>
-                                        <span>249.99$</span>
+                                        <span>9 Elements</span>
+                                        <span>249.99 (Dhs)</span>
                                     </div>
                                 </a>
                             </li>
@@ -378,192 +317,68 @@
                 <div class="andro_header-bottom-inner">
                     <div class="andro_category-mm">
                         <div class="andro_category-mm-header">
-                            <h6> <i class="fas fa-th-large"></i> Categories</h6>
+                            <h6>
+                                <i class="fas fa-th-large"></i>
+                                Catégories
+                            </h6>
                         </div>
                         <div class="andro_category-mm-body">
                             <ul>
-                                <!-- Level 1 -->
-                                <li class="andro_category-mm-item andro_category-mm-item-has-children">
-                                    <a href="#"> Politics & Affairs </a>
-                                    <ul class="andro_category-mm-2-cols">
-                                        <!-- Level 2 -->
-                                        <li>
-                                            <div class="andro_category-mm-banner">
-                                                <img src="assets/img/megamenu/1.jpg" alt="megamenu img">
-                                                <div class="andro_category-mm-banner-desc">
-                                                    <h6>Politics & Affairs</h6>
-                                                    <p>Experience Book Politics & Affairs like never before</p>
-                                                </div>
-                                            </div>
-                                            <ul>
-                                                <li> <a href="#">Cricket</a> </li>
-                                                <li> <a href="#">Mystery</a> </li>
-                                                <li> <a href="#">Book Mystery</a> </li>
-                                                <li> <a href="#">Geography</a> </li>
-                                                <li> <a href="#">Beauty & Health</a> </li>
-                                                <li> <a href="#">Music History</a> </li>
-                                                <li> <a href="#">Religious </a> </li>
-                                                <li> <a href="#">Yoga</a> </li>
-                                                <li> <a href="#">Biography</a> </li>
-                                            </ul>
-                                            <ul>
-                                                <li> <a href="#">History</a> </li>
-                                                <li> <a href="#">Book Politics & Affairs</a> </li>
-                                                <li> <a href="#">Journalism</a> </li>
-                                                <li> <a href="#">Geography </a> </li>
-                                                <li> <a href="#">World Economy </a> </li>
-                                                <li> <a href="#">Sports </a> </li>
-                                                <li> <a href="#">Fiction</a> </li>
-                                                <li> <a href="#">Mystery</a> </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="andro_category-mm-item">
+                                    <a href="#">
+                                        Politique
+                                    </a>
                                 </li>
-                                <li class="andro_category-mm-item"> <a href="#"> Auto & Bike</a> </li>
-                                <li class="andro_category-mm-item andro_category-mm-item-has-children">
-                                    <a href="#"> Fiction </a>
-                                    <ul class="andro_category-mm-2-cols">
-                                        <!-- Level 2 -->
-                                        <li>
-                                            <div class="andro_category-mm-banner">
-                                                <img src="assets/img/megamenu/2.jpg" alt="megamenu img">
-                                                <div class="andro_category-mm-banner-desc">
-                                                    <h6>Fiction</h6>
-                                                    <p>Hand written Fiction for your Book goods</p>
-                                                </div>
-                                            </div>
-                                            <ul>
-                                                <li> <a href="#">Cricket</a> </li>
-                                                <li> <a href="#">Mystery</a> </li>
-                                                <li> <a href="#">Book Mystery</a> </li>
-                                                <li> <a href="#">Geography</a> </li>
-                                                <li> <a href="#">Beauty & Health</a> </li>
-                                            </ul>
-                                            <ul>
-                                                <li> <a href="#">Music History</a> </li>
-                                                <li> <a href="#">Religious </a> </li>
-                                                <li> <a href="#">Yoga</a> </li>
-                                                <li> <a href="#">Biography</a> </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="andro_category-mm-item">
+                                    <a href="#">
+                                        Science fiction
+                                    </a>
                                 </li>
-                                <li class="andro_category-mm-item"> <a href="#">Home & Garden</a> </li>
-                                <li class="andro_category-mm-item"> <a href="#"> The Book of Love</a> </li>
-                                <li class="andro_category-mm-item"> <a href="#"> Mystery</a> </li>
-                                <li class="andro_category-mm-item"> <a href="#"> Beauty Care</a> </li>
-                                <li
-                                    class="andro_category-mm-item andro_category-mm-item-has-children andro_category-mm-item-expand">
-                                    <a href="#"> <i class="fas fa-plus"></i> More Categories</a>
-                                    <ul class="andro_category-mm-2-cols">
-                                        <!-- Level 2 -->
-                                        <li>
-                                            <div class="andro_category-mm-banner">
-                                                <img src="assets/img/megamenu/3.jpg" alt="megamenu img">
-                                                <div class="andro_category-mm-banner-desc">
-                                                    <h6>More Categories</h6>
-                                                    <p>Explore more categories that we offer</p>
-                                                </div>
-                                            </div>
-                                            <ul>
-                                                <li> <a href="#">Cricket</a> </li>
-                                                <li> <a href="#">Mystery</a> </li>
-                                                <li> <a href="#">Book Mystery</a> </li>
-                                                <li> <a href="#">Geography</a> </li>
-                                                <li> <a href="#">Beauty & Health</a> </li>
-                                            </ul>
-                                            <ul>
-                                                <li> <a href="#">Music History</a> </li>
-                                                <li> <a href="#">Religious </a> </li>
-                                                <li> <a href="#">Yoga</a> </li>
-                                                <li> <a href="#">Biography</a> </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="andro_category-mm-item">
+                                    <a href="#">
+                                        Policier
+                                    </a>
+                                </li>
+                                <li class="andro_category-mm-item">
+                                    <a href="#">
+                                        Romance
+                                    </a>
+                                </li>
+                                <li class="andro_category-mm-item">
+                                    <a href="#">
+                                        Histoire
+                                    </a>
+                                </li>
+                                <li class="andro_category-mm-item">
+                                    <a href="#">
+                                        Documentaire
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <!-- Menu -->
                     <ul class="navbar-nav">
-                        <li class="menu-item menu-item-has-children">
-                            <a href="#">Home Pages</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item"> <a href="index-2.html">Home v1</a> </li>
-                                <li class="menu-item"> <a href="home-v2.html">Home v2</a> </li>
-                                <li class="menu-item"> <a href="home-v3.html">Home v3</a> </li>
-                            </ul>
+                        <li class="menu-item">
+                            <a href="{{ route('accueil_front_office') }}">
+                                Accueil
+                            </a>
                         </li>
-                        <li class="menu-item menu-item-has-children">
-                            <a href="#">Blog</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="blog-grid.html">Blog Archive</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"> <a href="blog-grid.html">Grid View</a> </li>
-                                        <li class="menu-item"> <a href="blog-list.html">List View</a> </li>
-                                        <li class="menu-item"> <a href="blog-masonry.html">Masonry View</a> </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item"> <a href="post-single.html">Blog Single</a> </li>
-                            </ul>
+                        <li class="menu-item">
+                            <a href="">
+                                Ouvrages
+                            </a>
                         </li>
-                        <li class="menu-item menu-item-has-children">
-                            <a href="#">Pages</a>
-                            <ul class="sub-menu">
-                                <li class="menu-item"> <a href="about-us.html">About Us</a> </li>
-                                <li class="menu-item"> <a href="login.html">Login</a> </li>
-                                <li class="menu-item"> <a href="register.html">Sign Up</a> </li>
-                                <li class="menu-item"> <a href="checkout.html">Checkout</a> </li>
-                                <li class="menu-item"> <a href="cart.html">Cart</a> </li>
-                                <li class="menu-item"> <a href="wishlist.html">Wish List</a> </li>
-                                <li class="menu-item"> <a href="legal.html">Legal</a> </li>
-                                <li class="menu-item"> <a href="error.html">Error 404</a> </li>
-                            </ul>
+                        <li class="menu-item">
+                            <a href="">
+                                Contactez-nous
+                            </a>
                         </li>
-                        <li class="menu-item menu-item-has-children mega-menu-wrapper">
-                            <a href="shop-v1.html">Shop</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="mega-menu-item">
-                                                    <h6>Membership Delivery</h6>
-                                                    <p>
-                                                        Contrary to popular belief, Lorem Ipsum is not simply random
-                                                        text. It has roots in a piece of classical Latin literature from
-                                                        45 BC,
-                                                        making it over 2000 years old.
-                                                    </p>
-                                                    <a href="login.html"
-                                                        class="andro_btn-custom shadow-none btn-sm">Become a Member</a>
-                                                </div>
-                                            </div>
-                                            <div class="offset-lg-1 col-lg-3">
-                                                <div class="mega-menu-item">
-                                                    <h6>Shop Pages</h6>
-                                                    <a href="shop-v1.html">Shop v1 (Default)</a>
-                                                    <a href="shop-v2.html">Shop v2 (Full Width)</a>
-                                                    <a href="shop-v3.html">Shop v3 (No Sidebar)</a>
-                                                    <a href="shop-v4.html">Shop v4 (List view)</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="mega-menu-item">
-                                                    <h6>Product Details Pages</h6>
-                                                    <a href="product-single.html">Product Details v1</a>
-                                                    <a href="product-single-v2.html">Product Details v2</a>
-                                                    <a href="#" class="coming-soon">Product Details v3 <span>Coming
-                                                            Soon</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                        <li class="menu-item">
+                            <a href="">
+                                A propos
+                            </a>
                         </li>
-                        <li class="menu-item"> <a href="contact-us.html">Contact Us</a> </li>
                     </ul>
                     <!-- Side navigation toggle -->
                     <div class="aside-toggler aside-trigger-right desktop-toggler">
@@ -589,8 +404,8 @@
                     <img src="assets/img/logo.png" alt="logo">
                 </div>
                 <div class="andro_footer-buttons">
-                    <a href="#"> <img src="assets/img/android.png" alt="download it on the app store"></a>
-                    <a href="#"> <img src="assets/img/ios.png" alt="download it on the app store"></a>
+                    <a href="#"> <img src="assets/img/android.png" alt="Obtenir depuis Google Play"></a>
+                    <a href="#"> <img src="assets/img/ios.png" alt="Obtenir depuis AppStore"></a>
                 </div>
             </div>
         </div>
@@ -598,38 +413,44 @@
         <div class="andro_footer-middle">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 footer-widget">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 footer-widget">
                         <h5 class="widget-title">Information</h5>
                         <ul>
-                            <li> <a href="index-2.html">Home</a> </li>
-                            <li> <a href="blog-grid.html">Blog</a> </li>
-                            <li> <a href="about-us.html">About Us</a> </li>
-                            <li> <a href="shop-v1.html">Shop</a> </li>
-                            <li> <a href="contact-us.html">Contact Us</a> </li>
+                            <li>
+                                <a href="{{ route('accueil_front_office') }}">
+                                    Accueil
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Ouvrages
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Contactez-nous
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    A propos
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 footer-widget">
-                        <h5 class="widget-title">Top Categories</h5>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 footer-widget">
+                        <h5 class="widget-title">Top Catégories</h5>
                         <ul>
-                            <li> <a href="#">Politics & Affairs</a> </li>
-                            <li> <a href="#">Fiction</a> </li>
-                            <li> <a href="#">Mystery</a> </li>
-                            <li> <a href="#">Auto & Bike</a> </li>
-                            <li> <a href="#">The Book of Love</a> </li>
+                            <li> <a href="#">Politique</a> </li>
+                            <li> <a href="#">Science fiction</a> </li>
+                            <li> <a href="#">Policier</a> </li>
+                            <li> <a href="#">Romance</a> </li>
+                            <li> <a href="#">Histoire</a> </li>
+                            <li> <a href="#">Documentaire</a> </li>
                         </ul>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 footer-widget">
-                        <h5 class="widget-title">Others</h5>
-                        <ul>
-                            <li> <a href="checkout.html">Checkout</a> </li>
-                            <li> <a href="cart.html">Cart</a> </li>
-                            <li> <a href="product-single.html">Product</a> </li>
-                            <li> <a href="shop-v1.html">Shop</a> </li>
-                            <li> <a href="legal.html">Legal</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 footer-widget">
-                        <h5 class="widget-title">Social Media</h5>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 footer-widget">
+                        <h5 class="widget-title">Nos réseaux !</h5>
                         <ul class="social-media">
                             <li> <a href="#" class="facebook"> <i class="fab fa-facebook-f"></i> </a> </li>
                             <li> <a href="#" class="pinterest"> <i class="fab fa-pinterest-p"></i> </a> </li>
@@ -637,8 +458,14 @@
                             <li> <a href="#" class="twitter"> <i class="fab fa-twitter"></i> </a> </li>
                         </ul>
                         <div class="andro_footer-offer">
-                            <p>Signup and get exclusive offers and coupon codes</p>
-                            <a href="#" class="andro_btn-custom btn-sm shadow-none">Sign Up</a>
+                            <p>
+                                Suivez-nous sur les réseaux sociaux
+                                <br>
+                                afin de vous tenir compte de nos actualités !
+                            </p>
+                            <a href="#" class="andro_btn-custom btn-sm shadow-none">
+                                S'inscrire !
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -647,15 +474,17 @@
         <!-- Footer Bottom -->
         <div class="andro_footer-bottom">
             <div class="container">
-                <ul>
-                    <li> <a href="#">Privacy Policy</a> </li>
-                    <li> <a href="#">Refund Policy</a> </li>
-                    <li> <a href="#">Cookie Policy</a> </li>
-                    <li> <a href="#">Terms & Conditions</a> </li>
-                </ul>
+                <ul></ul>
                 <div class="andro_footer-copyright">
-                    <p> Copyright © 2020 <a href="#">YourWebsite</a> All Rights Reserved. </p>
-                    <a href="#" class="andro_back-to-top">Back to top <i class="fas fa-chevron-up"></i> </a>
+                    <p>
+                        Copyright © 2021-2022
+                        <a href="#">The-Book-Bay</a>
+                        Tout droit réservés.
+                    </p>
+                    <a href="#" class="andro_back-to-top">
+                        Haut
+                        <i class="fas fa-chevron-up"></i>
+                    </a>
                 </div>
             </div>
         </div>

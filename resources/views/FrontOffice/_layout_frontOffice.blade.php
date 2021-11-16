@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+
+    @section('styles')
+    @show
+
 </head>
 
 <body>
@@ -286,7 +290,7 @@
                     <div class="andro_header-controls">
                         <ul class="andro_header-controls-inner">
                             <li class="andro_header-favorites">
-                                <a href="" title="Liste de voeux">
+                                <a href="{{ route('wish_list') }}" title="Liste des voeux">
                                     <i class="flaticon-like"></i>
                                 </a>
                             </li>
@@ -392,6 +396,7 @@
         <!-- Bottom Header End -->
     </header>
     <!-- Header End -->
+
     @section('main_content')
     @show
 
@@ -508,6 +513,10 @@
     <script src="{{ asset('assets/js/plugins/slick-animation.min.js') }}"></script>
     <!-- Bookz Scripts -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    @section('scripts')
+    @show
+
 </body>
 
 </html>

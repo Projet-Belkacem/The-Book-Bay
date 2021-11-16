@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     'use strict';
 
     /*-------------------------------------------------------------------------------
@@ -50,22 +50,22 @@
     /*-------------------------------------------------------------------------------
     Newsletter popup close and set cookie
     -------------------------------------------------------------------------------*/
-    $(".newsletter-popup-trigger").on('click', function() {
+    $(".newsletter-popup-trigger").on('click', function () {
         setCookie('newsletter_popup_viewed', 'true');
     });
 
-    $('#androNewsletterPopup').on('hidden.bs.modal', function() {
+    $('#androNewsletterPopup').on('hidden.bs.modal', function () {
         setCookie('newsletter_popup_viewed', 'true');
     });
 
     /*-------------------------------------------------------------------------------
   Preloader
   -------------------------------------------------------------------------------*/
-    $(window).on('load', function() {
+    $(window).on('load', function () {
         $('.andro_preloader').addClass('hidden');
 
         if (!checkCookie('newsletter_popup_viewed')) {
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#androNewsletterPopup").modal('show');
             }, 3000);
         }
@@ -75,11 +75,11 @@
     /*-------------------------------------------------------------------------------
   Aside Menu
   -------------------------------------------------------------------------------*/
-    $(".aside-trigger-right").on('click', function() {
+    $(".aside-trigger-right").on('click', function () {
         var $el = $(".andro_aside-right")
         $el.toggleClass('open');
         if ($el.hasClass('open')) {
-            setTimeout(function() {
+            setTimeout(function () {
                 $el.find('.sidebar').fadeIn();
             }, 300);
         } else {
@@ -87,11 +87,11 @@
         }
     });
 
-    $(".aside-trigger-left").on('click', function() {
+    $(".aside-trigger-left").on('click', function () {
         $(".andro_aside-left").toggleClass('open');
     });
 
-    $(".andro_aside .menu-item-has-children > a").on('click', function(e) {
+    $(".andro_aside .menu-item-has-children > a").on('click', function (e) {
         var submenu = $(this).next(".sub-menu");
         e.preventDefault();
 
@@ -164,9 +164,9 @@
     /*-------------------------------------------------------------------------------
     Countdown
     -------------------------------------------------------------------------------*/
-    $(".andro_countdown-timer").each(function() {
+    $(".andro_countdown-timer").each(function () {
         var $this = $(this);
-        $this.countdown($this.data('countdown'), function(event) {
+        $this.countdown($this.data('countdown'), function (event) {
             $(this).text(
                 event.strftime('%D days %H:%M:%S')
             );
@@ -176,7 +176,7 @@
     /*-------------------------------------------------------------------------------
     Checkout Notices
     -------------------------------------------------------------------------------*/
-    $(".andro_notice a").on('click', function(e) {
+    $(".andro_notice a").on('click', function (e) {
         e.preventDefault();
 
         $(this).closest('.andro_notice').next().slideToggle();
@@ -185,7 +185,7 @@
     /*-------------------------------------------------------------------------------
     Open/Close Category Bar
     -------------------------------------------------------------------------------*/
-    $(".andro_category-mm").on('click', function() {
+    $(".andro_category-mm").on('click', function () {
         $(this).toggleClass('open');
     })
 
@@ -258,13 +258,13 @@
         dots: false,
         autoplay: true
     }).slickAnimation();
-    $('.slick-nav').on('click touch', function(e) {
+    $('.slick-nav').on('click touch', function (e) {
 
         e.preventDefault();
 
         var arrow = $(this);
 
-        if(!arrow.hasClass('animate')) {
+        if (!arrow.hasClass('animate')) {
             arrow.addClass('animate');
             setTimeout(() => {
                 arrow.removeClass('animate');
@@ -442,7 +442,7 @@
     /*-------------------------------------------------------------------------------
     Masonry
     -------------------------------------------------------------------------------*/
-    $('.masonry').imagesLoaded(function() {
+    $('.masonry').imagesLoaded(function () {
         var isotopeContainer = $('.masonry');
         isotopeContainer.isotope({
             itemSelector: '.masonry-item',
@@ -452,7 +452,7 @@
     /*-------------------------------------------------------------------------------
     Add / Subtract Quantity
     -------------------------------------------------------------------------------*/
-    $(".qty span").on('click', function() {
+    $(".qty span").on('click', function () {
         var qty = $(this).closest('.qty').find('input');
         var qtyVal = parseInt(qty.val());
         if ($(this).hasClass('qty-add')) {
@@ -465,7 +465,7 @@
     /*-----------------------------------
       Back to Top
       -----------------------------------*/
-    $('.andro_back-to-top').on('click', function() {
+    $('.andro_back-to-top').on('click', function () {
         $("html, body").animate({
             scrollTop: 0
         }, 600);
@@ -473,14 +473,14 @@
     })
 
     //On scroll events
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function () {
 
         doSticky();
 
     });
 
     //On resize events
-    $(window).on('resize', function() {
+    $(window).on('resize', function () {
 
 
     });

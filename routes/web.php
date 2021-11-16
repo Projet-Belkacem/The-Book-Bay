@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('FrontOffice.Accueil');
 })->name("accueil_front_office");
+
+Route::get('/Liste-Des-Voeux', function () {
+    return view('FrontOffice.WishList');
+})->name("wish_list");

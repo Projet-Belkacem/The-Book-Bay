@@ -295,10 +295,10 @@
                                 </a>
                             </li>
                             <li class="andro_header-cart">
-                                <a href="" title="Mon Panier">
+                                <a href="{{ route('mon_panier') }}" title="Mon Panier">
                                     <i class="flaticon-shopping-basket"></i>
                                     <div class="andro_header-cart-content">
-                                        <span>9 Elements</span>
+                                        <span>6 Elements</span>
                                         <span>249.99 (Dhs)</span>
                                     </div>
                                 </a>
@@ -469,7 +469,7 @@
                                 afin de vous tenir compte de nos actualités !
                             </p>
                             <a href="#" class="andro_btn-custom btn-sm shadow-none">
-                                S'inscrire !
+                                S'abonner !
                             </a>
                         </div>
                     </div>

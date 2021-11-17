@@ -97,11 +97,11 @@
             <h5>Suivez-nous pour ne rater aucune nouveauté !</h5>
             <div class="andro_post-share">
                 <ul class="andro_sm justify-content-center">
-                    <li> <a href="#" data-toggle="tooltip" title="" data-original-title="Share on Facebook"> <i
+                    <li> <a href="#" data-toggle="tooltip" title="" data-original-title="Facebook"> <i
                                 class="fab fa-facebook-f"></i> </a> </li>
-                    <li> <a href="#" data-toggle="tooltip" title="" data-original-title="Share on Twitter"> <i
+                    <li> <a href="#" data-toggle="tooltip" title="" data-original-title="Twitter"> <i
                                 class="fab fa-twitter"></i> </a> </li>
-                    <li> <a href="#" data-toggle="tooltip" title="" data-original-title="Share on Linkedin"> <i
+                    <li> <a href="#" data-toggle="tooltip" title="" data-original-title="Linkedin"> <i
                                 class="fab fa-linkedin-in"></i> </a> </li>
                 </ul>
             </div>
@@ -125,7 +125,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Votre adresse email">
                         <div class="input-group-append">
-                            <button class="andro_btn-custom" type="button">s'inscrire</button>
+                            <button class="andro_btn-custom" type="button">S'abonner</button>
                         </div>
                     </div>
                 </form>

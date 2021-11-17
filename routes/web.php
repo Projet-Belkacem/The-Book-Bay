@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/Liste-Des-Voeux', function () {
     return view('FrontOffice.WishList');
 })->name("wish_list");
+
+Route::get('/Mon-Panier', function () {
+    return view('FrontOffice.Panier');
+})->name("mon_panier");

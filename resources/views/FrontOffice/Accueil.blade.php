@@ -1874,29 +1874,7 @@
     </div>
 </div>
 <!-- Other Products End -->
-<div class="section light-bg">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-lg-30 d-block d-lg-flex align-items-center text-center text-lg-left">
-                <i class="flaticon-email-1 mr-0 mr-lg-4 fs-40"></i>
-                <div class="andro_newsletter-content">
-                    <h4 class="mb-0">Get Updates & More</h4>
-                    <p class="mb-0">Subscribe to our newsletter today!</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <form method="post">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Your Email Address">
-                        <div class="input-group-append">
-                            <button class="andro_btn-custom" type="button">Subscribe</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+@include('FrontOffice._abonnementNouveaute')
 <!-- Instagram Start -->
 <div class="row no-gutters">
     <div class="col-lg-4 primary-bg pattern-bg">

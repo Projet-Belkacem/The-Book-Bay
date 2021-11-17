@@ -24,3 +24,7 @@ Route::get('/Liste-Des-Voeux', function () {
 Route::get('/Mon-Panier', function () {
     return view('FrontOffice.Panier');
 })->name("mon_panier");
+
+Route::get('/Liste-Des-Ouvrages', function () {
+    return view('FrontOffice.ListeProduits');
+})->name("liste_des_ouvrages");

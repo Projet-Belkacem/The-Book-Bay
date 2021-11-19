@@ -210,17 +210,17 @@
                 </a>
             </li>
             <li class="menu-item">
-                <a  href="{{ route('liste_des_ouvrages') }}">
+                <a href="{{ route('liste_des_ouvrages') }}">
                     Ouvrages
                 </a>
             </li>
             <li class="menu-item">
-                <a href="">
+                <a href="{{ route('contactez_nous') }}">
                     Contactez-nous
                 </a>
             </li>
             <li class="menu-item">
-                <a href="">
+                <a href="{{ route('a_propos') }}">
                     A propos
                 </a>
             </li>
@@ -374,12 +374,12 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="">
+                            <a href="{{ route('contactez_nous') }}">
                                 Contactez-nous
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="">
+                            <a href="{{ route('a_propos') }}">
                                 A propos
                             </a>
                         </li>
@@ -427,17 +427,17 @@
                                 </a>
                             </li>
                             <li>
-                                <a  href="{{ route('liste_des_ouvrages') }}">
+                                <a href="{{ route('liste_des_ouvrages') }}">
                                     Ouvrages
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{ route('contactez_nous') }}">
                                     Contactez-nous
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="{{ route('a_propos') }}">
                                     A propos
                                 </a>
                             </li>

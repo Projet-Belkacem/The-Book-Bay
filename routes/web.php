@@ -28,3 +28,11 @@ Route::get('/Mon-Panier', function () {
 Route::get('/Liste-Des-Ouvrages', function () {
     return view('FrontOffice.ListeProduits');
 })->name("liste_des_ouvrages");
+
+Route::get('/Contactez-Nous', function () {
+    return view('FrontOffice.Contact');
+})->name("contactez_nous");
+
+Route::get('/A-Propos', function () {
+    return view('FrontOffice.Apropos');
+})->name("a_propos");

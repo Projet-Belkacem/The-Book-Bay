@@ -298,7 +298,9 @@
                                 <a href="{{ route('mon_panier') }}" title="Mon Panier">
                                     <i class="flaticon-shopping-basket"></i>
                                     <div class="andro_header-cart-content">
-                                        <span>6 Elements</span>
+                                        <span>
+                                            {{-- {{ count(session("panier")[0]) }} Elements --}}
+                                        </span>
                                         <span>249.99 (Dhs)</span>
                                     </div>
                                 </a>

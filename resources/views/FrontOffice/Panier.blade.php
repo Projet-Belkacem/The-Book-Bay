@@ -4,6 +4,7 @@
 <!--Cart Start -->
 <div class="section">
     <div class="container">
+        {{-- @dump() --}}
         <!-- Cart Table Start -->
         <table class="andro_responsive-table">
             <thead>

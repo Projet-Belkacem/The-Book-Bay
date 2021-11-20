@@ -21,9 +21,9 @@ Route::get('/Liste-Des-Voeux', function () {
     return view('FrontOffice.WishList');
 })->name("wish_list");
 
-Route::get('/Mon-Panier', function () {
-    return view('FrontOffice.Panier');
-})->name("mon_panier");
+Route::get('/Creer-Panier', "PanierController@creer_panier")->name("creer_panier");
+Route::get('/Mon-Panier', "PanierController@panier")->name("mon_panier");
+Route::get('/Ajout-Au-Panier-Produit-{id_produit}-Quantite-{quantite}', "PanierController@ajout_panier")->name("ajout_panier");
 
 Route::get('/Liste-Des-Ouvrages', function () {
     return view('FrontOffice.ListeProduits');

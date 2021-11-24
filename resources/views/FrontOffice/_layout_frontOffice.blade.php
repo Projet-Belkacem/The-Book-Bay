@@ -269,12 +269,12 @@
                         </li>
                     </ul>
                 </div>
-                <div class="alert alert-danger">
-                    @if (Session::has('error'))
-                    {{ session("error") }}
-                    @endif
-                </div>
             </div>
+            @if (Session::has('error'))
+            <div class="alert alert-danger">
+                {{ session("error") }}
+            </div>
+            @endif
         </div>
         <!-- Topheader End -->
         <!-- Middle Header Start -->

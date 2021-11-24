@@ -8,7 +8,7 @@
             <div class="col-lg-9">
                 <!-- Product Count & Orderby Start -->
                 <div class="andro_shop-global">
-                    <p>Résultat : <b>12</b> Ouvrage(s) </p>
+                    <p>Résultat : <b>{{ count($ouvrages) }}</b> Ouvrage(s) </p>
                     <form method="post">
                         <select class="form-control" name="orderby">
                             <option value="default">Trie par default</option>
@@ -22,317 +22,21 @@
                 <!-- Product Count & Orderby End -->
                 <div class="row masonry">
                     <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-badge andro_badge-featured">
-                                <i class="fa fa-star"></i>
-                                <span>Promo*</span>
-                            </div>
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/7.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html">Religious</a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>19 (Dhs)</span>
-                                    <span>29 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
+                    @foreach ($ouvrages as $ouvrage)
                     <div class="col-md-3 col-sm-4 masonry-item">
                         <div
                             class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
                             <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/8.png" alt="product"></a>
+                                <a href="">
+                                    <img src="{{ asset($ouvrage->chemin_photo_couverture) }}" alt=".."
+                                        style="height:200px;">
+                                </a>
                             </div>
                             <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html">Religious</a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>8 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/9.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html">History Books </a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>6 (Dhs)</span>
-                                    <span></span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/10.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-badge andro_badge-sale">
-                                20% Off
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html">Geography </a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>19 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-badge andro_badge-featured">
-                                <i class="fa fa-star"></i>
-                                <span>Promo*</span>
-                            </div>
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/11.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html"> Onions </a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>13 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/12.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html"> Fiction </a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>19 (Dhs)</span>
-                                    <span>29 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/2.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html">Journalism</a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>19 (Dhs)</span>
-                                    <span>29 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/4.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html">Fiction</a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>29 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/5.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html">Michell Obama </a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>29 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/6.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html">The Book of Love </a>
+                                <h6 class="andro_product-title">
+                                    <a href="">
+                                        {{ Str::limit($ouvrage->titre, 25, '...') }}
+                                    </a>
                                 </h6>
                                 <div class="andro_rating-wrapper">
                                     <div class="andro_rating">
@@ -346,80 +50,21 @@
                             </div>
                             <div class="andro_product-footer">
                                 <div class="andro_product-price">
-                                    <span>29 (Dhs)</span>
+                                    <span>19 (Dhs)</span>
                                 </div>
                                 <div class="andro_product-buttons">
                                     <a href="#" class="andro_btn-custom primary">Au Panier !</a>
                                     <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
+                                        class="andro_btn-custom light">
+                                        <u>
+                                            Détail
+                                        </u>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/14.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html">Allegiant </a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>29 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <!-- Product Start -->
-                    <div class="col-md-3 col-sm-4 masonry-item">
-                        <div
-                            class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
-                            <div class="andro_product-thumb">
-                                <a href="product-single.html"><img src="assets/img/products/15.png" alt="product"></a>
-                            </div>
-                            <div class="andro_product-body">
-                                <h6 class="andro_product-title"> <a href="product-single.html"> History </a> </h6>
-                                <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="andro_product-footer">
-                                <div class="andro_product-price">
-                                    <span>13 (Dhs)</span>
-                                </div>
-                                <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">Détail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                     <!-- Product End -->
                 </div>
             </div>
@@ -443,54 +88,16 @@
                             Catégories
                         </h5>
                         <ul class="sidebar-widget-list">
+                            @foreach ($themes as $theme)
                             <li>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">
-                                        Politique
+                                    <input type="checkbox" class="custom-control-input" id="theme-{{ $theme->id }}">
+                                    <label class="custom-control-label" for="theme-{{ $theme->id }}">
+                                        {{ $theme->libelle }}
                                     </label>
                                 </div>
                             </li>
-                            <li>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                    <label class="custom-control-label" for="customCheck2">
-                                        Science fiction
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                    <label class="custom-control-label" for="customCheck3">
-                                        Policier
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                    <label class="custom-control-label" for="customCheck4">
-                                        Romance
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                    <label class="custom-control-label" for="customCheck5">
-                                        Histoire
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                    <label class="custom-control-label" for="customCheck6">
-                                        Documentaire
-                                    </label>
-                                </div>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                     <!-- Filter: Categories End -->
@@ -500,7 +107,7 @@
                             Prix
                         </h5>
                         <input type="text" class="js-range-slider" name="freshness_range" value="" data-type="double"
-                            data-min="0" data-max="1000" data-from="10" data-to="100" data-grid="true"
+                            data-min="0" data-max="{{ $max_prix }}" data-from="10" data-to="100" data-grid="true"
                             data-postfix="  (Dhs)" />
                     </div>
                     <!-- Filter: Price End -->

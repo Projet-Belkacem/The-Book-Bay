@@ -17,7 +17,10 @@ class CreateLigneCommandesTable extends Migration
             $table->id();
             $table->integer("quantite");
             $table->float("montant");
+            $table->date("date_ajout_panier");
             $table->foreignId('ouvrage_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('commande_id')->constrained();
         });
     }
 

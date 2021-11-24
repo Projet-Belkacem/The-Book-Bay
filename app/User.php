@@ -11,12 +11,14 @@ use Illuminate\Notifications\Notifiable;
  * @property string $nom
  * @property string $prenom
  * @property string $date_naissance
+ * @property string $adresse
+ * @property string $phone
  * @property string $email
  * @property string $password
  * @property boolean $is_admin
+ * @property boolean $is_actif
  * @property string $remember_token
- * @property string $created_at
- * @property string $updated_at
+ * @property LigneCommande[] $ligneCommandes
  */
 class User extends Authenticatable
 {
@@ -32,7 +34,7 @@ class User extends Authenticatable
     /**
      * @var array
      */
-    protected $fillable = ['nom', 'prenom', 'date_naissance', 'email', 'password', 'is_admin', 'remember_token', 'created_at', 'updated_at'];
+    protected $fillable = ['nom', 'prenom', 'date_naissance', 'adresse', 'phone', 'email', 'password', 'is_admin', 'is_actif', 'remember_token'];
 
     /**
      * Indicates if the model should be timestamped.
@@ -40,4 +42,12 @@ class User extends Authenticatable
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function ligneCommandes()
+    {
+        return $this->hasMany('App\LigneCommande');
+    }
 }

@@ -36,3 +36,7 @@ Route::get('/Contactez-Nous', function () {
 Route::get('/A-Propos', function () {
     return view('FrontOffice.Apropos');
 })->name("a_propos");
+
+Auth::routes();
+
+Route::get('admin/home', 'HomeController@adminHome')->name('admin_home')->middleware('is_admin');

@@ -252,12 +252,27 @@
                     </ul>
                     <ul class="andro_header-top-links">
                         <li class="menu-item">
-                            <a href="">
+                            @auth
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-link text-white">
+                                    Se déconnecter
+                                </button>
+                            </form>
+                            @endauth
+                            @guest
+                            <a href="{{ route('login') }}">
                                 <i class="fas fa-user-shield"></i>
                                 S'identifier
                             </a>
+                            @endguest
                         </li>
                     </ul>
+                </div>
+                <div class="alert alert-danger">
+                    @if (Session::has('error'))
+                    {{ session("error") }}
+                    @endif
                 </div>
             </div>
         </div>

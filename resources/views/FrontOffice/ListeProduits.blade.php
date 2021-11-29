@@ -52,7 +52,9 @@
                                     </span>
                                 </div>
                                 <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">
+                                    <a href="#"
+                                        data-url="{{ route('ajout_panier', ['id_produit' => $ouvrage->id , 'quantite' => 1]) }}"
+                                        class="andro_btn-custom primary au_panier">
                                         Au Panier !
                                     </a>
                                     <a href="#detail-ouvrage-{{ $ouvrage->id }}" data-toggle="modal"
@@ -101,7 +103,7 @@
                                                     </p>
                                                     <form class="andro_product-atc-form d-flex justify-content-center">
                                                         <div class="qty-outter">
-                                                            <a href="#" class="andro_btn-custom">
+                                                            <a href="" class="andro_btn-custom">
                                                                 Au panier !!
                                                             </a>
                                                             <div class="qty">
@@ -180,6 +182,12 @@
 
 @section('scripts')
 <script>
+    $(".au_panier").click(function () {
+        $.post($(this).data("url"), function (responce) {
+            console.log(responce);
+        });
+    })
+
     $("#input-recherche-detail").keyup(function () {
         recherche_multi_criteres();
     });

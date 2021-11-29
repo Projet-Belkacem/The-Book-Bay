@@ -474,15 +474,13 @@
 
     //On scroll events
     $(window).on('scroll', function () {
-
         doSticky();
-
-    });
-
-    //On resize events
-    $(window).on('resize', function () {
-
-
     });
 
 })(jQuery);
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});

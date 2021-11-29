@@ -23,6 +23,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     @section('styles')
     @show
 

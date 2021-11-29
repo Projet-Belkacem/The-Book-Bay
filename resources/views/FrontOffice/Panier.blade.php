@@ -4,7 +4,6 @@
 <!--Cart Start -->
 <div class="section">
     <div class="container">
-        {{-- @dump() --}}
         <!-- Cart Table Start -->
         <table class="andro_responsive-table">
             <thead>
@@ -17,72 +16,49 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($ouvrages as $id => $obj)
                 <tr>
                     <td class="remove">
-                        <button type="button" class="close-btn close-danger remove-from-cart">
+                        <button type="button" class="close-btn close-danger remove-from-cart" data-toggle="modal"
+                            data-target="#_modal_ConfirmationSupression"
+                            data-url="{{ route('supprimer_panier', ['id_produit'=> $obj['detail']->id ]) }}">
                             <span></span>
                             <span></span>
                         </button>
                     </td>
                     <td data-title="Product">
                         <div class="andro_cart-product-wrapper">
-                            <img src="assets/img/products/1.png" alt="prod1">
+                            <img src="{{ asset($obj['detail']->chemin_photo_couverture) }}" alt=".."
+                                style="height:100px;width:70px;">
                             <div class="andro_cart-product-body">
-                                <h6> <a href="#">Kiwi</a> </h6>
-                                <p>2 Piéces</p>
+                                <h6>
+                                    <a href="#">
+                                        {{ $obj["detail"]->titre }}
+                                    </a>
+                                </h6>
+                                <p>
+                                    {{ $obj["qtt"] }}
+                                    Piéces
+                                </p>
                             </div>
                         </div>
                     </td>
-                    <td data-title="Price"> <strong>12.99 (Dhs)</strong> </td>
+                    <td data-title="Price">
+                        <strong>
+                            {{ $obj["detail"]->prix }}
+                        </strong>
+                    </td>
                     <td class="quantity" data-title="Quantity">
-                        <input type="number" class="qty form-control" value="1">
+                        <input type="number" class="qty form-control" value="{{ $obj['qtt'] }}">
                     </td>
-                    <td data-title="Total"> <strong>12.99 (Dhs)</strong> </td>
+                    <td data-title="Total">
+                        <strong>
+                            {{ $obj["qtt"] *  $obj["detail"]->prix }}
+                            (Dhs)
+                        </strong>
+                    </td>
                 </tr>
-                <tr>
-                    <td class="remove">
-                        <button type="button" class="close-btn close-danger remove-from-cart">
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </td>
-                    <td data-title="Product">
-                        <div class="andro_cart-product-wrapper">
-                            <img src="assets/img/products/5.png" alt="prod1">
-                            <div class="andro_cart-product-body">
-                                <h6> <a href="#">Livre historique</a> </h6>
-                                <p>1 Piéces</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td data-title="Price"> <strong>9.99 (Dhs)</strong> </td>
-                    <td class="quantity" data-title="Quantity">
-                        <input type="number" class="qty form-control" value="1">
-                    </td>
-                    <td data-title="Total"> <strong>9.99 (Dhs)</strong> </td>
-                </tr>
-                <tr>
-                    <td class="remove">
-                        <button type="button" class="close-btn close-danger remove-from-cart">
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </td>
-                    <td data-title="Product">
-                        <div class="andro_cart-product-wrapper">
-                            <img src="assets/img/products/4.png" alt="prod1">
-                            <div class="andro_cart-product-body">
-                                <h6> <a href="#">Santé & Beauté </a> </h6>
-                                <p>3 Piéces</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td data-title="Price"> <strong>13.99 (Dhs)</strong> </td>
-                    <td class="quantity" data-title="Quantity">
-                        <input type="number" class="qty form-control" value="1">
-                    </td>
-                    <td data-title="Total"> <strong>13.99 (Dhs)</strong> </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
         <!-- Cart Table End -->
@@ -288,4 +264,24 @@
         </div>
     </div>
 </div>
+@include('FrontOffice._modal_ConfirmationSupression')
+@endsection
+
+@section('scripts')
+<script>
+    $('#_modal_ConfirmationSupression').on('show.bs.modal', function (event) {
+        ligne_selection = $(event.relatedTarget).parents("tr");
+        $(this).find('#btn_confirm_suppression').attr("data-url", $(event.relatedTarget).data('url'));
+    })
+    $("#btn_confirm_suppression").click(function () {
+        var url = $(this).data('url')
+        $.post(url, function (response) {
+            console.log(response)
+        }).done(function () {
+            $(ligne_selection).remove();
+        });
+        $(this).parents("#_modal_ConfirmationSupression").modal('hide');
+    })
+
+</script>
 @endsection

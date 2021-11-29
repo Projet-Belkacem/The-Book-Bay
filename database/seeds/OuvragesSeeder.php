@@ -37,7 +37,7 @@ class OuvragesSeeder extends Seeder
                 "titre" => "Harry Potter et les reliques de la mort",
                 "prix" => 120.25,
                 "auteur" => "J.K Rowling",
-                "description" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed maxime ad consequuntur, excepturi doloribus odio ...!",
+                "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repellat nostrum vel, sunt consectetur dolorum sint amet fuga esse quisquam numquam cupiditate! Eveniet suscipit accusantium aspernatur corrupti excepturi hic natus vitae necessitatibus, beatae neque ipsum provident architecto mollitia eius magni sint ut, perferendis dolorum voluptas impedit sequi eaque harum. Corrupti sit est labore, quos ipsum, laborum qui officia sapiente veniam exercitationem quibusdam quis. Non, deleniti eum, aut id quas aspernatur recusandae ut nam quisquam atque sapiente rerum asperiores possimus ipsam assumenda. Minima temporibus libero optio ducimus, iusto, at pariatur, vel corrupti ex molestias fugit veritatis laborum cupiditate enim fuga! Tempora!",
                 "chemin_photo_couverture" => "uploads/images/ouvrages/sample_harry_potter.jpeg",
                 "quantite_actuelle" => 56,
                 "theme_id" => 3
@@ -45,7 +45,7 @@ class OuvragesSeeder extends Seeder
                 "titre" => "Le livre de la jungle",
                 "prix" => 99.49,
                 "auteur" => "Rudyard Kipling",
-                "description" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed maxime ad consequuntur, excepturi doloribus odio ...!",
+                "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repellat nostrum vel, sunt consectetur dolorum sint amet fuga esse quisquam numquam cupiditate! Eveniet suscipit accusantium aspernatur corrupti excepturi hic natus vitae necessitatibus, beatae neque ipsum provident architecto mollitia eius magni sint ut, perferendis dolorum voluptas impedit sequi eaque harum. Corrupti sit est labore, quos ipsum, laborum qui officia sapiente veniam exercitationem quibusdam quis. Non, deleniti eum, aut id quas aspernatur recusandae ut nam quisquam atque sapiente rerum asperiores possimus ipsam assumenda. Minima temporibus libero optio ducimus, iusto, at pariatur, vel corrupti ex molestias fugit veritatis laborum cupiditate enim fuga! Tempora!",
                 "chemin_photo_couverture" => "uploads/images/ouvrages/sample_livre_jungle.jpeg",
                 "quantite_actuelle" => 99,
                 "theme_id" => 1
@@ -53,7 +53,7 @@ class OuvragesSeeder extends Seeder
                 "titre" => "Indiana Jones",
                 "prix" => 126.99,
                 "auteur" => "Henry Jones Senior",
-                "description" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed maxime ad consequuntur, excepturi doloribus odio ...!",
+                "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repellat nostrum vel, sunt consectetur dolorum sint amet fuga esse quisquam numquam cupiditate! Eveniet suscipit accusantium aspernatur corrupti excepturi hic natus vitae necessitatibus, beatae neque ipsum provident architecto mollitia eius magni sint ut, perferendis dolorum voluptas impedit sequi eaque harum. Corrupti sit est labore, quos ipsum, laborum qui officia sapiente veniam exercitationem quibusdam quis. Non, deleniti eum, aut id quas aspernatur recusandae ut nam quisquam atque sapiente rerum asperiores possimus ipsam assumenda. Minima temporibus libero optio ducimus, iusto, at pariatur, vel corrupti ex molestias fugit veritatis laborum cupiditate enim fuga! Tempora!",
                 "chemin_photo_couverture" => "uploads/images/ouvrages/sample_indiana_jones.jpeg",
                 "quantite_actuelle" => 12,
                 "theme_id" => 4

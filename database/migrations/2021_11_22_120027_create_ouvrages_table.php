@@ -18,7 +18,7 @@ class CreateOuvragesTable extends Migration
             $table->string("titre");
             $table->float("prix");
             $table->string("auteur");
-            $table->string("description");
+            $table->string("description", 2000);
             $table->string("chemin_photo_couverture");
             $table->string("quantite_actuelle");
             $table->foreignId('theme_id')->constrained();

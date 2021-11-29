@@ -20,42 +20,43 @@
                     </form>
                 </div>
                 <!-- Product Count & Orderby End -->
-                <div class="row masonry">
+                <div class="row">
                     <!-- Product Start -->
                     @foreach ($ouvrages as $ouvrage)
-                    <div class="col-md-3 col-sm-4 masonry-item">
+                    <div class="col-md-3 col-sm-4 masonry-item" data-theme="{{ $ouvrage->theme->id }}">
                         <div
                             class="andro_product andro_product-minimal andro_product-has-controls andro_product-has-buttons">
                             <div class="andro_product-thumb">
-                                <a href="">
+                                <a href="#detail-ouvrage-{{ $ouvrage->id }}" data-toggle="modal"
+                                    data-target="#detail-ouvrage-{{ $ouvrage->id }}">
                                     <img src="{{ asset($ouvrage->chemin_photo_couverture) }}" alt=".."
                                         style="height:200px;">
                                 </a>
                             </div>
                             <div class="andro_product-body">
                                 <h6 class="andro_product-title">
-                                    <a href="">
+                                    <a href="#detail-ouvrage-{{ $ouvrage->id }}" data-toggle="modal"
+                                        class="titre-ouvrage" data-target="#detail-ouvrage-{{ $ouvrage->id }}">
                                         {{ Str::limit($ouvrage->titre, 25, '...') }}
                                     </a>
                                 </h6>
                                 <div class="andro_rating-wrapper">
-                                    <div class="andro_rating">
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star active"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
+                                    Auteur : {{ $ouvrage->auteur }}
                                 </div>
                             </div>
                             <div class="andro_product-footer">
                                 <div class="andro_product-price">
-                                    <span>19 (Dhs)</span>
+                                    <span>
+                                        {{ $ouvrage->prix }}
+                                        (Dhs)
+                                    </span>
                                 </div>
                                 <div class="andro_product-buttons">
-                                    <a href="#" class="andro_btn-custom primary">Au Panier !</a>
-                                    <a href="#" data-toggle="modal" data-target="#quickViewModal"
-                                        class="andro_btn-custom light">
+                                    <a href="#" class="andro_btn-custom primary">
+                                        Au Panier !
+                                    </a>
+                                    <a href="#detail-ouvrage-{{ $ouvrage->id }}" data-toggle="modal"
+                                        data-target="#detail-ouvrage-{{ $ouvrage->id }}" class="andro_btn-custom light">
                                         <u>
                                             Détail
                                         </u>
@@ -64,8 +65,66 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
                     <!-- Product End -->
+                    <!-- Quick View Modal Start -->
+                    <div class="modal fade andro_quick-view-modal" id="detail-ouvrage-{{ $ouvrage->id }}" role="dialog"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="close-btn close-dark close" data-dismiss="modal">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <img src="{{ asset($ouvrage->chemin_photo_couverture) }}"
+                                                    style="width: 100%; height:100%">
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="andro_product-single-content">
+                                                    <div class="andro_rating-wrapper">
+                                                        Auteur(s) : {{ $ouvrage->auteur }}
+                                                    </div>
+                                                    <h3>
+                                                        {{ $ouvrage->titre }}
+                                                    </h3>
+                                                    <div class="andro_product-price">
+                                                        <span>
+                                                            {{ $ouvrage->prix }}
+                                                            (Dhs)
+                                                        </span>
+                                                    </div>
+                                                    <p class="andro_product-excerpt">
+                                                        {{ $ouvrage->description }}
+                                                    </p>
+                                                    <form class="andro_product-atc-form d-flex justify-content-center">
+                                                        <div class="qty-outter">
+                                                            <a href="#" class="andro_btn-custom">
+                                                                Au panier !!
+                                                            </a>
+                                                            <div class="qty">
+                                                                <span class="qty-subtract">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </span>
+                                                                <input type="number" name="qty" value="1" min="1">
+                                                                <span class="qty-add">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quick View Modal End -->
+                    @endforeach
                 </div>
             </div>
             <!-- Sidebar Start -->
@@ -73,13 +132,10 @@
                 <div class="sidebar">
                     <!-- Search Start -->
                     <div class="sidebar-widget widget-search">
-                        <form method="post">
-                            <div class="andro_search-adv-input">
-                                <input type="text" class="form-control" placeholder="Rechercher " name="search"
-                                    value="">
-                                <button type="submit" name="button"><i class="fa fa-search"></i></button>
-                            </div>
-                        </form>
+                        <div class="andro_search-adv-input">
+                            <input type="text" class="form-control" placeholder="Rechercher" name="search"
+                                id="input-recherche-detail" required>
+                        </div>
                     </div>
                     <!-- Search End -->
                     <!-- Filter: Categories Start -->
@@ -91,7 +147,8 @@
                             @foreach ($themes as $theme)
                             <li>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="theme-{{ $theme->id }}">
+                                    <input type="checkbox" class="custom-control-input checkbox-themes"
+                                        value="{{ $theme->id }}" id="theme-{{ $theme->id }}">
                                     <label class="custom-control-label" for="theme-{{ $theme->id }}">
                                         {{ $theme->libelle }}
                                     </label>
@@ -119,4 +176,46 @@
 </div>
 <!-- Products End -->
 @include('FrontOffice._abonnementNouveaute')
+@endsection
+
+@section('scripts')
+<script>
+    $("#input-recherche-detail").keyup(function () {
+        recherche_multi_criteres();
+    });
+    $(".checkbox-themes").change(function () {
+        recherche_multi_criteres();
+    })
+
+    function recherche_multi_criteres() {
+        $(".masonry-item")
+            .toArray()
+            .forEach(function (ouvrage) {
+                recherche_par_theme($(ouvrage).data("theme")) &&
+                    recherche_par_titre(
+                        $(ouvrage).find(".titre-ouvrage").text().trim().toLocaleLowerCase(),
+                        $("#input-recherche-detail").val().trim().toLocaleLowerCase()
+                    ) ?
+                    $(ouvrage).removeClass("d-none") :
+                    $(ouvrage).addClass("d-none");
+            });
+
+    }
+
+    function recherche_par_theme(ouvrage_theme) {
+        if ($(".checkbox-themes:checked").length != 0) {
+            var themes = $(".checkbox-themes:checked").map(function () {
+                    return parseInt(this.value);
+                })
+                .get();
+            return themes.includes(ouvrage_theme);
+        }
+        return true;
+    }
+
+    function recherche_par_titre(ouvrage_titre, critere_titre) {
+        return ouvrage_titre.includes(critere_titre);
+    }
+
+</script>
 @endsection

@@ -63,7 +63,7 @@
         </table>
         <!-- Cart Table End -->
         <!-- Coupon Code Start -->
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="form-group mb-0">
                     <div class="input-group mb-0">
@@ -236,7 +236,10 @@
                                 Somme
                             </th>
                             <td>
-                                90.99 (Dhs)
+                                @guest
+                                {{ $LAYOUT_MONTANT_TOTAL_COMMANDE }}
+                                (Dhs)
+                                @endguest
                             </td>
                         </tr>
                         <tr>
@@ -244,7 +247,14 @@
                                 Tax
                             </th>
                             <td>
-                                9.99 (Dhs) <span class="small">(11%)</span>
+                                {{ ($LAYOUT_MONTANT_TOTAL_COMMANDE * 11)/100 }}
+                                (Dhs)
+                                <br>
+                                <span class="small">
+                                    <u>
+                                        TVA : 11%
+                                    </u>
+                                </span>
                             </td>
                         </tr>
                         <tr>
@@ -252,14 +262,22 @@
                                 Total
                             </th>
                             <td>
-                                <b>99.99 (Dhs)</b>
+                                <b>
+                                    <span id="span_total">
+                                        {{ (($LAYOUT_MONTANT_TOTAL_COMMANDE * 11)/100) + $LAYOUT_MONTANT_TOTAL_COMMANDE }}
+                                    </span>
+                                    (Dhs)
+                                </b>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <a href="#" class="andro_btn-custom primary btn-block">
-                    Procéder au paiement
-                </a>
+                <form action="" method="post" id="form_paiement">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Procéder au paiement
+                        <i class="fas fa-chevron-circle-right"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -268,20 +286,5 @@
 @endsection
 
 @section('scripts')
-<script>
-    $('#_modal_ConfirmationSupression').on('show.bs.modal', function (event) {
-        ligne_selection = $(event.relatedTarget).parents("tr");
-        $(this).find('#btn_confirm_suppression').attr("data-url", $(event.relatedTarget).data('url'));
-    })
-    $("#btn_confirm_suppression").click(function () {
-        var url = $(this).data('url')
-        $.post(url, function (response) {
-            console.log(response)
-        }).done(function () {
-            $(ligne_selection).remove();
-        });
-        $(this).parents("#_modal_ConfirmationSupression").modal('hide');
-    })
-
-</script>
+<script src="{{ asset('assets/js/FrontOffice/Panier.js') }}"></script>
 @endsection

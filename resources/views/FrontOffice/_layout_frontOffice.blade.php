@@ -245,10 +245,16 @@
                                 <a href="{{ route('mon_panier') }}" title="Mon Panier">
                                     <i class="flaticon-shopping-basket"></i>
                                     <div class="andro_header-cart-content">
+                                        @guest
                                         <span>
-                                            {{-- {{ count(session("panier")[0]) }} Elements --}}
+                                            {{ $LAYOUT_NOMBRE_TOTAL_ELEMENT_COMMANDE }}
+                                            Ouvrage(s)
                                         </span>
-                                        <span>249.99 (Dhs)</span>
+                                        <span>
+                                            {{ $LAYOUT_MONTANT_TOTAL_COMMANDE  }}
+                                            (Dhs)
+                                        </span>
+                                        @endguest
                                     </div>
                                 </a>
                             </li>
@@ -460,6 +466,7 @@
     <script src="{{ asset('assets/js/plugins/ion.rangeSlider.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/jquery.zoom.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/slick-animation.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap-notify.min.js') }}"></script>
     <!-- Bookz Scripts -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 

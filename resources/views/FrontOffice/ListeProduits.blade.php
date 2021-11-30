@@ -8,7 +8,7 @@
             <div class="col-lg-9">
                 <!-- Product Count & Orderby Start -->
                 <div class="andro_shop-global">
-                    <p>Résultat : <b>{{ count($ouvrages) }}</b> Ouvrage(s) </p>
+                    <p>Total : <b>{{ count($ouvrages) }}</b> Ouvrage(s) </p>
                     <form method="post">
                         <select class="form-control" name="orderby">
                             <option value="default">Trie par default</option>
@@ -52,7 +52,7 @@
                                     </span>
                                 </div>
                                 <div class="andro_product-buttons">
-                                    <a href="#"
+                                    <a href="#;"
                                         data-url="{{ route('ajout_panier', ['id_produit' => $ouvrage->id , 'quantite' => 1]) }}"
                                         class="andro_btn-custom primary au_panier">
                                         Au Panier !
@@ -103,14 +103,17 @@
                                                     </p>
                                                     <form class="andro_product-atc-form d-flex justify-content-center">
                                                         <div class="qty-outter">
-                                                            <a href="" class="andro_btn-custom">
+                                                            <a href="#;"
+                                                                data-url="{{ route('ajout_panier', ['id_produit' => $ouvrage->id , 'quantite' => 'QTT']) }}"
+                                                                class="andro_btn-custom detail_au_panier">
                                                                 Au panier !!
                                                             </a>
                                                             <div class="qty">
                                                                 <span class="qty-subtract">
                                                                     <i class="fa fa-minus"></i>
                                                                 </span>
-                                                                <input type="number" name="qty" value="1" min="1">
+                                                                <input type="number" class="input_qtt" name="qty"
+                                                                    value="1" min="1">
                                                                 <span class="qty-add">
                                                                     <i class="fa fa-plus"></i>
                                                                 </span>
@@ -181,49 +184,5 @@
 @endsection
 
 @section('scripts')
-<script>
-    $(".au_panier").click(function () {
-        $.post($(this).data("url"), function (responce) {
-            console.log(responce);
-        });
-    })
-
-    $("#input-recherche-detail").keyup(function () {
-        recherche_multi_criteres();
-    });
-    $(".checkbox-themes").change(function () {
-        recherche_multi_criteres();
-    })
-
-    function recherche_multi_criteres() {
-        $(".masonry-item")
-            .toArray()
-            .forEach(function (ouvrage) {
-                recherche_par_theme($(ouvrage).data("theme")) &&
-                    recherche_par_titre(
-                        $(ouvrage).find(".titre-ouvrage").text().trim().toLocaleLowerCase(),
-                        $("#input-recherche-detail").val().trim().toLocaleLowerCase()
-                    ) ?
-                    $(ouvrage).removeClass("d-none") :
-                    $(ouvrage).addClass("d-none");
-            });
-
-    }
-
-    function recherche_par_theme(ouvrage_theme) {
-        if ($(".checkbox-themes:checked").length != 0) {
-            var themes = $(".checkbox-themes:checked").map(function () {
-                    return parseInt(this.value);
-                })
-                .get();
-            return themes.includes(ouvrage_theme);
-        }
-        return true;
-    }
-
-    function recherche_par_titre(ouvrage_titre, critere_titre) {
-        return ouvrage_titre.includes(critere_titre);
-    }
-
-</script>
+<script src="{{ asset('assets/js/FrontOffice/ListeProduits.js') }}"></script>
 @endsection

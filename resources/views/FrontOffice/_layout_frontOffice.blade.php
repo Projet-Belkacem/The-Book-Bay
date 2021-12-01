@@ -255,6 +255,16 @@
                                             (Dhs)
                                         </span>
                                         @endguest
+                                        @auth
+                                        <span>
+                                            {{ $AUTH_LAYOUT_NOMBRE_TOTAL_ELEMENT_COMMANDE }}
+                                            Ouvrage(s)
+                                        </span>
+                                        <span>
+                                            {{ $AUTH_LAYOUT_MONTANT_TOTAL_COMMANDE  }}
+                                            (Dhs)
+                                        </span>
+                                        @endauth
                                     </div>
                                 </a>
                             </li>

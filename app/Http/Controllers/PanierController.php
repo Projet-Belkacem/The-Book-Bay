@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ouvrage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PanierController extends Controller
 {
@@ -32,5 +33,12 @@ class PanierController extends Controller
         unset($panier[0][$id_produit]);
         session()->put("panier", $panier);
         return "supprimé avec succès";
+    }
+
+    public function valider_commande_panier()
+    {
+        dd(
+            session("panier")
+        );
     }
 }

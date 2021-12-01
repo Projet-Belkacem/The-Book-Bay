@@ -256,6 +256,10 @@
                                 {{ $LAYOUT_MONTANT_TOTAL_COMMANDE }}
                                 (Dhs)
                                 @endguest
+                                @auth
+                                {{ $AUTH_LAYOUT_MONTANT_TOTAL_COMMANDE }}
+                                (Dhs)
+                                @endauth
                             </td>
                         </tr>
                         <tr>
@@ -263,7 +267,12 @@
                                 Tax
                             </th>
                             <td>
+                                @guest
                                 {{ ($LAYOUT_MONTANT_TOTAL_COMMANDE * 11)/100 }}
+                                @endguest
+                                @auth
+                                {{ ($AUTH_LAYOUT_MONTANT_TOTAL_COMMANDE * 11)/100 }}
+                                @endauth
                                 (Dhs)
                                 <br>
                                 <span class="small">
@@ -280,12 +289,22 @@
                             <td>
                                 <b>
                                     <span id="span_total">
+                                        @guest
                                         {{
                                         round(
                                                 (($LAYOUT_MONTANT_TOTAL_COMMANDE * 11)/100) + $LAYOUT_MONTANT_TOTAL_COMMANDE,
                                                 2
                                             ) 
                                         }}
+                                        @endguest
+                                        @auth
+                                        {{
+                                        round(
+                                                (($AUTH_LAYOUT_MONTANT_TOTAL_COMMANDE * 11)/100) + $AUTH_LAYOUT_MONTANT_TOTAL_COMMANDE,
+                                                2
+                                            ) 
+                                        }}
+                                        @endauth
                                     </span>
                                     (Dhs)
                                 </b>
@@ -293,7 +312,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <form action="" method="post" id="form_paiement">
+                <form action="{{ route('valider_commande_panier') }}" method="post" id="form_paiement">
+                    @csrf
                     <button type="submit" class="btn btn-primary btn-block">
                         Procéder au paiement
                         <i class="fas fa-chevron-circle-right"></i>

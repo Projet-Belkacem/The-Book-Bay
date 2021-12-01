@@ -32,7 +32,7 @@
                                 style="height:100px;width:70px;">
                             <div class="andro_cart-product-body">
                                 <h6>
-                                    <a href="#">
+                                    <a href="#;">
                                         {{ $obj["detail"]->titre }}
                                     </a>
                                 </h6>
@@ -44,16 +44,28 @@
                         </div>
                     </td>
                     <td data-title="Price">
-                        <strong>
+                        <strong class="span_prix_element">
                             {{ $obj["detail"]->prix }}
                         </strong>
                     </td>
                     <td class="quantity" data-title="Quantity">
-                        <input type="number" class="qty form-control" value="{{ $obj['qtt'] }}">
+                        <div class="input-group">
+                            <input type="number" min="1" class="qty form-control input_qtt_panier"
+                                value="{{ $obj['qtt'] }}" required>
+                            <div class="input-group-append" data-toggle="tooltip" title="Confirmer"
+                                style="display: none;">
+                                <button type="button" class="btn btn-sm btn-primary btn_maj_qtt_ouvrage"
+                                    data-url="{{ route('ajout_panier', ['id_produit'=>$id, 'quantite'=> 'QTT']) }}">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
                     </td>
                     <td data-title="Total">
                         <strong>
-                            {{ $obj["qtt"] *  $obj["detail"]->prix }}
+                            <span class="span_total_montant_element">
+                                {{ $obj["qtt"] *  $obj["detail"]->prix }}
+                            </span>
                             (Dhs)
                         </strong>
                     </td>
@@ -99,7 +111,7 @@
                     <!-- Product Start -->
                     <div class="andro_product andro_product-list andro_product-has-controls andro_product-has-buttons">
                         <div class="andro_product-thumb">
-                            <a href="product-single.html"><img src="assets/img/products/5.png" alt="product"></a>
+                            <a href="#;"><img src="assets/img/products/5.png" alt="product"></a>
                         </div>
                         <div class="andro_product-body">
                             <div class="andro_rating-wrapper">
@@ -112,7 +124,7 @@
                                 </div>
                                 <span>5 étoile(s)</span>
                             </div>
-                            <h5 class="andro_product-title"> <a href="product-single.html">Michell Obama </a> </h5>
+                            <h5 class="andro_product-title"> <a href="#;">Michell Obama </a> </h5>
                             <div class="andro_product-price">
                                 <span>11 (Dhs)</span>
                             </div>
@@ -123,8 +135,12 @@
                         </div>
                         <div class="andro_product-footer">
                             <div class="andro_product-buttons">
-                                <a href="#" class="andro_btn-custom primary">Ajouter au panier !</a>
-                                <a href="#" class="andro_btn-custom light">Détail</a>
+                                <a href="#;" class="andro_btn-custom primary">
+                                    Ajouter au panier !
+                                </a>
+                                <a href="#;" class="andro_btn-custom light">
+                                    Détail
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +148,7 @@
                     <!-- Product Start -->
                     <div class="andro_product andro_product-list andro_product-has-controls andro_product-has-buttons">
                         <div class="andro_product-thumb">
-                            <a href="product-single.html"><img src="assets/img/products/14.png" alt="product"></a>
+                            <a href="#;"><img src="assets/img/products/14.png" alt="product"></a>
                         </div>
                         <div class="andro_product-body">
                             <div class="andro_rating-wrapper">
@@ -145,7 +161,7 @@
                                 </div>
                                 <span>4 étoile(s)</span>
                             </div>
-                            <h5 class="andro_product-title"> <a href="product-single.html">Allegiant </a> </h5>
+                            <h5 class="andro_product-title"> <a href="#;">Allegiant </a> </h5>
                             <div class="andro_product-price">
                                 <span>11 (Dhs)</span>
                             </div>
@@ -154,8 +170,8 @@
                         </div>
                         <div class="andro_product-footer">
                             <div class="andro_product-buttons">
-                                <a href="#" class="andro_btn-custom primary">Ajouter au panier !</a>
-                                <a href="#" class="andro_btn-custom light">Détail</a>
+                                <a href="#;" class="andro_btn-custom primary">Ajouter au panier !</a>
+                                <a href="#;" class="andro_btn-custom light">Détail</a>
                             </div>
                         </div>
                     </div>
@@ -163,7 +179,7 @@
                     <!-- Product Start -->
                     <div class="andro_product andro_product-list andro_product-has-controls andro_product-has-buttons">
                         <div class="andro_product-thumb">
-                            <a href="product-single.html"><img src="assets/img/products/12.png" alt="product"></a>
+                            <a href="#;"><img src="assets/img/products/12.png" alt="product"></a>
                         </div>
                         <div class="andro_product-body">
                             <div class="andro_rating-wrapper">
@@ -176,7 +192,7 @@
                                 </div>
                                 <span>5 étoile(s)</span>
                             </div>
-                            <h5 class="andro_product-title"> <a href="product-single.html">Fiction</a> </h5>
+                            <h5 class="andro_product-title"> <a href="#;">Fiction</a> </h5>
                             <div class="andro_product-price">
                                 <span>11 (Dhs)</span>
                             </div>
@@ -185,8 +201,8 @@
                         </div>
                         <div class="andro_product-footer">
                             <div class="andro_product-buttons">
-                                <a href="#" class="andro_btn-custom primary">Ajouter au panier !</a>
-                                <a href="#" class="andro_btn-custom light">Détail</a>
+                                <a href="#;" class="andro_btn-custom primary">Ajouter au panier !</a>
+                                <a href="#;" class="andro_btn-custom light">Détail</a>
                             </div>
                         </div>
                     </div>
@@ -194,7 +210,7 @@
                     <!-- Product Start -->
                     <div class="andro_product andro_product-list andro_product-has-controls andro_product-has-buttons">
                         <div class="andro_product-thumb">
-                            <a href="product-single.html"><img src="assets/img/products/6.png" alt="product"></a>
+                            <a href="#;"><img src="assets/img/products/6.png" alt="product"></a>
                         </div>
                         <div class="andro_product-body">
                             <div class="andro_rating-wrapper">
@@ -207,7 +223,7 @@
                                 </div>
                                 <span>5 étoile(s)</span>
                             </div>
-                            <h5 class="andro_product-title"> <a href="product-single.html">The Book of Love </a> </h5>
+                            <h5 class="andro_product-title"> <a href="#;">The Book of Love </a> </h5>
                             <div class="andro_product-price">
                                 <span>11 (Dhs)</span>
                             </div>
@@ -216,8 +232,8 @@
                         </div>
                         <div class="andro_product-footer">
                             <div class="andro_product-buttons">
-                                <a href="#" class="andro_btn-custom primary">Ajouter au panier !</a>
-                                <a href="#" class="andro_btn-custom light">Détail</a>
+                                <a href="#;" class="andro_btn-custom primary">Ajouter au panier !</a>
+                                <a href="#;" class="andro_btn-custom light">Détail</a>
                             </div>
                         </div>
                     </div>
@@ -264,7 +280,12 @@
                             <td>
                                 <b>
                                     <span id="span_total">
-                                        {{ (($LAYOUT_MONTANT_TOTAL_COMMANDE * 11)/100) + $LAYOUT_MONTANT_TOTAL_COMMANDE }}
+                                        {{
+                                        round(
+                                                (($LAYOUT_MONTANT_TOTAL_COMMANDE * 11)/100) + $LAYOUT_MONTANT_TOTAL_COMMANDE,
+                                                2
+                                            ) 
+                                        }}
                                     </span>
                                     (Dhs)
                                 </b>

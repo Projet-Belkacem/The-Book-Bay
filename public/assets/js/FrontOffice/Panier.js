@@ -20,4 +20,23 @@ $(document).ready(function () {
         });
         $(this).parents("#_modal_ConfirmationSupression").modal('hide');
     });
+    $(".input_qtt_panier").change(function () {
+        if (this.reportValidity()) {
+            var
+                prix = parseFloat($(this).parents('tr').find('.span_prix_element').text()),
+                quantite = this.value;
+            var total_montant_element = (prix * quantite).toFixed(2);
+            $(this).parents('tr').find('.span_total_montant_element').text(total_montant_element);
+            $(this).next(".input-group-append").show();
+        }
+    });
+    $(".btn_maj_qtt_ouvrage").click(function () {
+        var quantite = $(this).parents('td').find('.input_qtt_panier').val();
+        var url = $(this).data('url').replace('QTT', quantite);
+        $.post(url, function (responce) {
+            console.log(responce);
+        }).done(function () {
+            window.location.reload();
+        });
+    });
 });

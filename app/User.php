@@ -2,9 +2,11 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
 /**
  * @property integer $id
@@ -49,5 +51,45 @@ class User extends Authenticatable
     public function ligneCommandes()
     {
         return $this->hasMany('App\LigneCommande');
+    }
+
+    public function getCurrentCommande()
+    {
+        $commande_en_attente_du_client =
+            DB::table('ligne_commandes')
+            ->join("commandes", "ligne_commandes.commande_id", "=", "commandes.id")
+            ->select("commandes.id")
+            ->where("commandes.etat", "=", "EN_ATTENTE")
+            ->where("ligne_commandes.user_id", "=", auth()->id())
+            ->get();
+
+        return $commande_en_attente_du_client->count() != 0 ?
+            $commande_en_attente_du_client->first()->id  :
+            Commande::insertGetId([
+                "etat" => "EN_ATTENTE",
+                "date_debut_commande" => Carbon::now()
+            ]);
+    }
+
+    public function getCurrentPanier()
+    {
+        return DB::table('ligne_commandes')
+            ->join("commandes", "ligne_commandes.commande_id", "=", "commandes.id")
+            ->join("ouvrages", "ligne_commandes.ouvrage_id", "=", "ouvrages.id")
+            ->select("ouvrages.*", "ligne_commandes.quantite", "ligne_commandes.montant", "ligne_commandes.id as id_ligne_commande")
+            ->where("commandes.etat", "=", "EN_ATTENTE")
+            ->where("ligne_commandes.user_id", "=", auth()->id())
+            ->get();
+    }
+
+    public function getValidatedPanier()
+    {
+        return DB::table('ligne_commandes')
+            ->join("commandes", "ligne_commandes.commande_id", "=", "commandes.id")
+            ->join("ouvrages", "ligne_commandes.ouvrage_id", "=", "ouvrages.id")
+            ->select("ouvrages.*", "ligne_commandes.quantite", "ligne_commandes.montant", "ligne_commandes.id as id_ligne_commande")
+            ->where("commandes.etat", "=", "EN_COURS")
+            ->where("ligne_commandes.user_id", "=", auth()->id())
+            ->get();
     }
 }

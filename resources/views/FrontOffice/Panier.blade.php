@@ -16,6 +16,7 @@
                 </tr>
             </thead>
             <tbody>
+                @guest
                 @foreach ($ouvrages as $id => $obj)
                 <tr>
                     <td class="remove">
@@ -71,6 +72,65 @@
                     </td>
                 </tr>
                 @endforeach
+                @endguest
+                @auth
+                @foreach ($ouvrages as $ouvrage)
+                <tr data-produit="{{ $ouvrage->id }}">
+                    <td class="remove">
+                        <button type="button" class="close-btn close-danger remove-from-cart" data-toggle="modal"
+                            data-target="#_modal_ConfirmationSupression" data-produit="{{ $ouvrage->id }}"
+                            data-ligne="{{ $ouvrage->id_ligne_commande }}"
+                            data-url="{{ route('supprimer_panier', ['id_produit'=> $ouvrage->id ]) }}">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </td>
+                    <td data-title="Product">
+                        <div class="andro_cart-product-wrapper">
+                            <img src="{{ asset($ouvrage->chemin_photo_couverture) }}" alt=".."
+                                style="height:100px;width:70px;">
+                            <div class="andro_cart-product-body">
+                                <h6>
+                                    <a href="#;">
+                                        {{ $ouvrage->titre }}
+                                    </a>
+                                </h6>
+                                <p>
+                                    {{ $ouvrage->quantite }}
+                                    Piéces
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-title="Price">
+                        <strong class="span_prix_element">
+                            {{ $ouvrage->prix }}
+                        </strong>
+                    </td>
+                    <td class="quantity" data-title="Quantity">
+                        <div class="input-group">
+                            <input type="number" min="1" class="qty form-control input_qtt_panier"
+                                value="{{ $ouvrage->quantite }}" required>
+                            <div class="input-group-append" data-toggle="tooltip" title="Confirmer"
+                                style="display: none;">
+                                <button type="button" class="btn btn-sm btn-primary btn_maj_qtt_ouvrage"
+                                    data-url="{{ route('ajout_panier', ['id_produit'=> $ouvrage->id, 'quantite'=> 'QTT']) }}">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-title="Total">
+                        <strong>
+                            <span class="span_total_montant_element">
+                                {{ $ouvrage->quantite *  $ouvrage->prix }}
+                            </span>
+                            (Dhs)
+                        </strong>
+                    </td>
+                </tr>
+                @endforeach
+                @endauth
             </tbody>
         </table>
         <!-- Cart Table End -->

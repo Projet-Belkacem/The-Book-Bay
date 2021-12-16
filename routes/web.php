@@ -22,6 +22,7 @@ Route::get('/Liste-Des-Voeux', function () {
 })->name("wish_list");
 
 Route::get('/Mon-Panier', "PanierController@panier")->name("mon_panier");
+Route::get('/Mon-Paiement', "PanierController@paiement")->name("mon_paiement");
 Route::post('/Ajout-Au-Panier-Produit-{id_produit}-Quantite-{quantite}', "PanierController@ajout_panier")->name("ajout_panier");
 Route::post('/Supprimer-Du-Panier-Produit-{id_produit}', "PanierController@supprimer_panier")->name("supprimer_panier");
 Route::post('/Valider-Mon-Panier', "PanierController@valider_commande_panier")->name("valider_commande_panier")->middleware('auth');

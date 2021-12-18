@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Commande;
 use App\LigneCommande;
 use App\Ouvrage;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\Request;
 
 class PanierController extends Controller
 {
@@ -16,13 +18,6 @@ class PanierController extends Controller
             "ouvrages" => Auth::check() ?
                 Auth::user()->getCurrentPanier() :
                 session()->get('panier')[0]
-        ]);
-    }
-
-    public function paiement()
-    {
-        return view('FrontOffice.Paiement', [
-            "produits" => Auth::user()->getValidatedPanier()
         ]);
     }
 
@@ -76,6 +71,19 @@ class PanierController extends Controller
         } else {
             dd("Erreur fatale : Authentification");
         }
+    }
+
+    public function paiement()
+    {
+        return view('FrontOffice.Paiement', [
+            "produits" => Auth::user()->getValidatedPanier()
+        ]);
+    }
+
+    public function valider_commande_paiement(Request $request)
+    {
+        Commande::find($request->commande)->update(["etat" => "PAIEMENT"]);
+        return redirect()->to("mes_commandes");
     }
 
     public static function transfert_panier_session_BD()

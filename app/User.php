@@ -87,7 +87,7 @@ class User extends Authenticatable
         return DB::table('ligne_commandes')
             ->join("commandes", "ligne_commandes.commande_id", "=", "commandes.id")
             ->join("ouvrages", "ligne_commandes.ouvrage_id", "=", "ouvrages.id")
-            ->select("ouvrages.*", "ligne_commandes.quantite", "ligne_commandes.montant", "ligne_commandes.id as id_ligne_commande")
+            ->select("ouvrages.*", "ligne_commandes.quantite", "ligne_commandes.montant", "ligne_commandes.id as id_ligne_commande", "commandes.id as id_commande")
             ->where("commandes.etat", "=", "EN_COURS")
             ->where("ligne_commandes.user_id", "=", auth()->id())
             ->get();

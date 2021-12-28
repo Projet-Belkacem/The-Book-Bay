@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr">
 
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,6 +155,13 @@
                     A propos
                 </a>
             </li>
+            @auth
+            <li class="menu-item">
+                <a href="{{ route('mes_commandes') }}">
+                    Mes Commandes
+                </a>
+            </li>
+            @endauth
         </ul>
     </aside>
     <div class="andro_aside-overlay aside-trigger-left"></div>
@@ -348,6 +354,13 @@
                                 A propos
                             </a>
                         </li>
+                        @auth
+                        <li class="menu-item">
+                            <a href="{{ route('mes_commandes') }}">
+                                Mes Commandes
+                            </a>
+                        </li>
+                        @endauth
                     </ul>
                     <!-- Side navigation toggle -->
                     <div class="aside-toggler aside-trigger-right desktop-toggler">
@@ -406,6 +419,13 @@
                                     A propos
                                 </a>
                             </li>
+                            @auth
+                            <li>
+                                <a href="{{ route('mes_commandes') }}">
+                                    Mes Commandes
+                                </a>
+                            </li>
+                            @endauth
                         </ul>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 footer-widget">

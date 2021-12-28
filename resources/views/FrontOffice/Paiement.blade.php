@@ -73,13 +73,21 @@
                             <input type="text" placeholder="Nom" name="nom" class="form-control font-weight-bold"
                                 value="{{ Auth::user()->nom }}" required>
                         </div>
-                        <div class="form-group col-xl-12">
+                        <div class="form-group col-xl-6">
                             <label>
                                 Ville
                                 <span class="text-danger">*</span>
                             </label>
                             <input type="text" placeholder="Ville" name="ville" class="form-control font-weight-bold"
                                 required>
+                        </div>
+                        <div class="form-group col-xl-6">
+                            <label>
+                                Code postal
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" placeholder="Code postal" name="code_postal"
+                                class="form-control font-weight-bold" value="60000" required>
                         </div>
                         <div class="form-group col-xl-12">
                             <label>
@@ -174,18 +182,18 @@
                         <label>
                             N&deg; de Carte
                         </label>
-                        <input type="text" class="form-control font-weight-bold" name="master-number"
+                        <input type="text" class="form-control font-weight-bold" name="num_carte"
                             placeholder="Card Number">
                     </div>
                     <div class="row">
                         <div class="col-xl-6 form-group">
                             <label>Date d'expiration</label>
-                            <input type="text" class="form-control font-weight-bold" name="master-expiry"
+                            <input type="text" class="form-control font-weight-bold" name="expiration_carte"
                                 placeholder="Date d'expiration (MM/YY)">
                         </div>
                         <div class="col-xl-6 form-group">
                             <label>CVV*</label>
-                            <input type="number" class="form-control font-weight-bold" name="master-cvv"
+                            <input type="number" class="form-control font-weight-bold" name="cvv_carte"
                                 placeholder="CVV">
                         </div>
                     </div>

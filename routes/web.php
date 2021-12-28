@@ -27,6 +27,7 @@ Route::post('/Supprimer-Du-Panier-Produit-{id_produit}', "PanierController@suppr
 Route::post('/Valider-Mon-Panier', "PanierController@valider_commande_panier")->name("valider_commande_panier")->middleware('auth');
 Route::get('/Mon-Paiement', "PanierController@paiement")->name("mon_paiement")->middleware('auth');
 Route::post('/Valider-Mon-Paiement', "PanierController@valider_commande_paiement")->name("valider_commande_paiement")->middleware('auth');
+Route::get('/Mes-Commandes', "PanierController@mes_commandes")->name("mes_commandes")->middleware('auth');
 
 Route::get('/Liste-Des-Ouvrages', "AccueilController@liste_des_ouvrages")->name("liste_des_ouvrages");
 

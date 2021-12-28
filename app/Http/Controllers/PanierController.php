@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Commande;
 use App\LigneCommande;
+use App\Livraison;
 use App\Ouvrage;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -67,7 +68,7 @@ class PanierController extends Controller
                 ->where("commandes.etat", "=", "EN_ATTENTE")
                 ->where("ligne_commandes.user_id", "=", auth()->id())
                 ->update(["commandes.etat" => "EN_COURS"]);
-            return \redirect()->route("mon_paiement");
+            return redirect()->route("mon_paiement");
         } else {
             dd("Erreur fatale : Authentification");
         }
@@ -82,8 +83,38 @@ class PanierController extends Controller
 
     public function valider_commande_paiement(Request $request)
     {
+        Livraison::create([
+            "prenom" => $request->prenom,
+            "nom" => $request->nom,
+            "ville" => $request->ville,
+            "adresse" => $request->adresse,
+            "telephone" => $request->telephone,
+            "email" => $request->email,
+            "remarques" => $request->remarques,
+            "code_postal" => $request->code_postal,
+            "num_carte" => $request->num_carte,
+            "expiration_carte" => $request->expiration_carte,
+            "cvv_carte" => $request->cvv_carte,
+            "commande_id" => $request->commande,
+        ])->save();
         Commande::find($request->commande)->update(["etat" => "PAIEMENT"]);
-        return redirect()->to("mes_commandes");
+        return redirect()->route("mes_commandes");
+    }
+
+    public function mes_commandes()
+    {
+        $commandes_du_user = Commande::hydrate(
+            DB::table("commandes")
+                ->join("ligne_commandes", "commandes.id", "=", "ligne_commandes.commande_id")
+                ->where("ligne_commandes.user_id", "=", auth()->id())
+                ->select("commandes.*")
+                ->groupBy("commandes.id")
+                ->get()
+                ->all()
+        );
+        return view("FrontOffice.Commandes", [
+            "commandes" => $commandes_du_user
+        ]);
     }
 
     public static function transfert_panier_session_BD()

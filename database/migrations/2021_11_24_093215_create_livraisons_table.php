@@ -15,10 +15,17 @@ class CreateLivraisonsTable extends Migration
     {
         Schema::create('livraisons', function (Blueprint $table) {
             $table->id();
+            $table->string("prenom");
+            $table->string("nom");
             $table->string("ville");
             $table->string("adresse", 500);
+            $table->string("telephone");
+            $table->string("email");
+            $table->string("remarques", 500)->nullable();
+            $table->string("num_carte")->nullable();
+            $table->string("expiration_carte")->nullable();
+            $table->string("cvv_carte")->nullable();
             $table->integer("code_postal");
-            $table->date("date_livraison");
             $table->foreignId('commande_id')->constrained();
         });
     }

@@ -58,7 +58,8 @@ $commandes
                                                 Valider
                                             </a>
                                             @else
-                                            <a class="btn btn-sm btn-outline-info" href="{{ route('mon_panier') }}">
+                                            <a class="btn btn-sm btn-outline-info"
+                                                href="{{ route('imprimer_bon_commande', ['commande' => $commande->id]) }}">
                                                 Imprimer
                                                 <br>
                                                 Bon de commande

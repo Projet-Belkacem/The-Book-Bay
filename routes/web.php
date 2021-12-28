@@ -28,6 +28,7 @@ Route::post('/Valider-Mon-Panier', "PanierController@valider_commande_panier")->
 Route::get('/Mon-Paiement', "PanierController@paiement")->name("mon_paiement")->middleware('auth');
 Route::post('/Valider-Mon-Paiement', "PanierController@valider_commande_paiement")->name("valider_commande_paiement")->middleware('auth');
 Route::get('/Mes-Commandes', "PanierController@mes_commandes")->name("mes_commandes")->middleware('auth');
+Route::get('/Imprimer-Bon-Commande-{commande}', "PanierController@imprimer_bon_commande")->name("imprimer_bon_commande")->middleware('auth');
 
 Route::get('/Liste-Des-Ouvrages', "AccueilController@liste_des_ouvrages")->name("liste_des_ouvrages");
 

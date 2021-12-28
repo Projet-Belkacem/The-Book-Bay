@@ -27,7 +27,7 @@
                             <span></span>
                         </button>
                     </td>
-                    <td data-title="Product">
+                    <td data-title="Ouvrage">
                         <div class="andro_cart-product-wrapper">
                             <img src="{{ asset($obj['detail']->chemin_photo_couverture) }}" alt=".."
                                 style="height:100px;width:70px;">
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </td>
-                    <td data-title="Price">
+                    <td data-title="Prix">
                         <strong class="span_prix_element">
                             {{ $obj["detail"]->prix }}
                         </strong>
@@ -85,7 +85,7 @@
                             <span></span>
                         </button>
                     </td>
-                    <td data-title="Product">
+                    <td data-title="Ouvrage">
                         <div class="andro_cart-product-wrapper">
                             <img src="{{ asset($ouvrage->chemin_photo_couverture) }}" alt=".."
                                 style="height:100px;width:70px;">
@@ -102,7 +102,7 @@
                             </div>
                         </div>
                     </td>
-                    <td data-title="Price">
+                    <td data-title="Prix">
                         <strong class="span_prix_element">
                             {{ $ouvrage->prix }}
                         </strong>

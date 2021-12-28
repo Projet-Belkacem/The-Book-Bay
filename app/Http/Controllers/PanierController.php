@@ -117,6 +117,13 @@ class PanierController extends Controller
         ]);
     }
 
+    public function imprimer_bon_commande(Commande $commande)
+    {
+        return view("FrontOffice.ImprimerBonCommande", [
+            "lignes_commande" => $commande->ligneCommandes()->get()
+        ]);
+    }
+
     public static function transfert_panier_session_BD()
     {
         $panier = session("panier");

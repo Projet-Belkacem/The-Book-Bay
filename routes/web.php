@@ -32,9 +32,8 @@ Route::get('/Imprimer-Bon-Commande-{commande}', "PanierController@imprimer_bon_c
 
 Route::get('/Liste-Des-Ouvrages', "AccueilController@liste_des_ouvrages")->name("liste_des_ouvrages");
 
-Route::get('/Contactez-Nous', function () {
-    return view('FrontOffice.Contact');
-})->name("contactez_nous");
+Route::get('/Contactez-Nous', "ContactController@contactez_nous")->name("contactez_nous");
+Route::post('/Contactez-Nous', "ContactController@post_contactez_nous")->name("post_contactez_nous");
 
 Route::get('/A-Propos', function () {
     return view('FrontOffice.Apropos');

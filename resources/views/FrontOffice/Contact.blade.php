@@ -91,27 +91,41 @@
                         Contactez-nous
                     </h4>
                 </div>
-                <form method="post">
+                <form action="{{ route('post_contactez_nous') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="form-group col-lg-6">
-                            <input type="text" placeholder="Nom" class="form-control" name="fname" value="">
+                            <input type="text" placeholder="Nom" class="form-control" name="nom"
+                                value="{{ Auth::check() ? Auth::User()->nom : "" }}" required>
                         </div>
                         <div class="form-group col-lg-6">
-                            <input type="text" placeholder="Prénom" class="form-control" name="lname" value="">
+                            <input type="text" placeholder="Prénom" class="form-control" name="prenom"
+                                value="{{ Auth::check() ? Auth::User()->prenom : "" }}" required>
                         </div>
                         <div class="form-group col-lg-12">
                             <input type="email" placeholder="Addresse e-mail" class="form-control" name="email"
-                                value="">
+                                value="{{ Auth::check() ? Auth::User()->email : "" }}" required>
                         </div>
                         <div class="form-group col-lg-12">
-                            <input type="text" placeholder="Sujet" class="form-control" name="subject" value="">
+                            <input type="text" placeholder="Sujet" class="form-control" name="sujet" required>
                         </div>
                         <div class="form-group col-lg-12">
-                            <textarea name="message" class="form-control" placeholder="Votre message"
-                                rows="8"></textarea>
+                            <textarea name="message" class="form-control" placeholder="Votre message" rows="8"
+                                required></textarea>
                         </div>
+                        @auth
+                        <input type="hidden" name="user" value="{{ Auth::User()->id }}">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="bon_commande" class="mb-0">
+                                    Bon de Commande :
+                                </label>
+                                <input type="file" class="form-control" name="bon_commande" id="bon_commande">
+                            </div>
+                        </div>
+                        @endauth
                     </div>
-                    <button type="submit" class="andro_btn-custom primary" name="button">
+                    <button type="submit" class="andro_btn-custom primary">
                         Soumettre
                     </button>
                 </form>

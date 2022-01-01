@@ -37,6 +37,6 @@ class ContactController extends Controller
                     $request->file("bon_commande")
                 ) : ""
         ]);
-        return \redirect()->route("contactez_nous");
+        return \redirect()->route("contactez_nous")->with("success", "Votre requête a été soumise avec succès."); // ajouter un msg flash ->with('','')
     }
 }

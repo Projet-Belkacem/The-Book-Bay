@@ -13,6 +13,13 @@
 <div class="section pt-0">
     <div class="container">
         <div class="row">
+            <div class="col-lg-12 text-center">
+                @if (Session::has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ Session::get('success') }}
+                </div>
+                @endif
+            </div>
             <div class="col-lg-5 mb-lg-30">
                 <div class="section-title">
                     <h4 class="title">FAQ</h4>

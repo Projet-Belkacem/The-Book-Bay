@@ -24,6 +24,31 @@ class GestionOuvragesController extends Controller
         ]);
     }
 
+    public function ajouter_ouvrage(Request $request)
+    {
+        $request->validate([
+            'titre'  => 'required',
+            'prix'   => 'required',
+            'auteur'  => 'required',
+            'theme_id'  => 'required',
+            'quantite_actuelle'  => 'required',
+            'description'   => 'required',
+            'chemin_photo_couverture' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
+        ]);
+
+        $form_data = $request->except("_token");
+        $form_data['chemin_photo_couverture'] = $this->fileUploader->Upload(
+            $this->path,
+            "ouvrage_created_" . date('Y_m_d_H_i_s'),
+            $request->file('chemin_photo_couverture')
+        );
+
+        $id =  Ouvrage::insertGetId($form_data);
+
+        return redirect()->route("gestion_ouvrages")
+            ->with('success', "Nouvel ouvrage ajouté avec succès : #OUV$id");
+    }
+
     public function modifier_ouvrage(Request $request, Ouvrage $ouvrage)
     {
         $request->validate([
@@ -37,13 +62,20 @@ class GestionOuvragesController extends Controller
         ]);
 
         $form_data = $request->all();
-
         $form_data['chemin_photo_couverture'] = $request->file('chemin_photo_couverture') ?
-            $this->fileUploader->Upload($this->path, $ouvrage->id . "_image_" . date('Y_m_d_H_i'), $request->file('chemin_photo_couverture')) :
+            $this->fileUploader->Upload($this->path, "ouvrage_$ouvrage->id" . "_image_" . date('Y_m_d_H_i_s'), $request->file('chemin_photo_couverture')) :
             $ouvrage->chemin_photo_couverture;
 
         $ouvrage->update($form_data);
 
-        return redirect()->route("gestion_ouvrages")->with('success', 'Modifié avec succès!');
+        return redirect()->route("gestion_ouvrages")
+            ->with('success', "#OUV$ouvrage->id Modifié avec succès !");
+    }
+
+    public function supprimer_ouvrage(Ouvrage $ouvrage)
+    {
+        $ouvrage->delete();
+        return redirect()->route("gestion_ouvrages")
+            ->with('success', "#OUV$ouvrage->id Supprimé avec succès !");
     }
 }

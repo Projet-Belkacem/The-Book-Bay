@@ -46,8 +46,10 @@ Route::post('/Contactez-Nous', "ContactController@post_contactez_nous")->name("p
 Route::get('/The-Dashboard', 'HomeController@adminHome')->name('admin_home')->middleware('is_admin');
 
 // Gestion des ouvrages
-Route::get('/Gestion-Des-Ouvrages', 'GestionOuvragesController@index')->name('gestion_ouvrages')->middleware('is_admin');
-Route::post('/Modifier-Un-Ouvrage/{ouvrage}', 'GestionOuvragesController@modifier_ouvrage')->name('modifier_ouvrage')->middleware('is_admin');
+Route::get('/The-Dashboard/Gestion-Des-Ouvrages', 'GestionOuvragesController@index')->name('gestion_ouvrages')->middleware('is_admin');
+Route::post('/The-Dashboard/Gestion-Des-Ouvrages/Ajouter-Un-Ouvrage', 'GestionOuvragesController@ajouter_ouvrage')->name('ajouter_ouvrage')->middleware('is_admin');
+Route::post('/The-Dashboard/Gestion-Des-Ouvrages/Modifier-Un-Ouvrage/{ouvrage}', 'GestionOuvragesController@modifier_ouvrage')->name('modifier_ouvrage')->middleware('is_admin');
+Route::post('/The-Dashboard/Gestion-Des-Ouvrages/Supprimer-Un-Ouvrage/{ouvrage}', 'GestionOuvragesController@supprimer_ouvrage')->name('supprimer_ouvrage')->middleware('is_admin');
 
 
 // Scaffold d'authentification AUTH : généré automatiquement lors du build

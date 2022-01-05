@@ -27,6 +27,12 @@
 </div>
 @endif
 <div class="row">
+    <div class="col-md-12 text-right mb-2">
+        <a href="#;" class="btn btn-success bg-success" data-toggle="modal" data-target="#ajouter-ouvrage">
+            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+            Ouvrage
+        </a>
+    </div>
     @foreach ($ouvrages as $ouvrage)
     <div class="col-md-4">
         <div class="card">
@@ -84,9 +90,17 @@
                             data-target="#modifier-ouvrage-{{ $ouvrage->id }}">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         </button>
-                        <button class="btn btn-danger bg-danger">
+                        @if ($ouvrage->ligneCommandes()->count() != 0)
+                        <button class="btn btn-danger bg-danger" data-toggle="tooltip" title="Etat : en précommande"
+                            disabled>
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </button>
+                        @else
+                        <button class="btn btn-danger bg-danger" data-toggle="modal"
+                            data-target="#supprimer-ouvrage-{{ $ouvrage->id }}">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -94,8 +108,10 @@
     </div>
     @include('BackOffice._modalDetailOuvrage')
     @include('BackOffice._modalModifierOuvrage')
+    @include('BackOffice._modalSupprimerOuvrage')
     @endforeach
 </div>
+@include('BackOffice._modalAjouterOuvrage')
 @endsection
 
 @section('scripts')

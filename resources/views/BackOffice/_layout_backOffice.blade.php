@@ -28,8 +28,8 @@
                     </a>
                 </h1>
                 <ul class="list-unstyled components mb-5">
-                    <li class="active">
-                        <a href="#">
+                    <li class="{{ Route::getCurrentRoute()->getName() == 'admin_home' ? 'active' : '' }}">
+                        <a href="{{ route('admin_home') }}">
                             <span class="fa fa-home mr-3"></span>
                             Accueil
                         </a>
@@ -46,7 +46,7 @@
                             Commandes
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ Route::getCurrentRoute()->getName() == 'gestion_ouvrages' ? 'active' : '' }}">
                         <a href="{{ route('gestion_ouvrages') }}">
                             <span class="fa fa-sticky-note mr-3"></span>
                             Ouvrages

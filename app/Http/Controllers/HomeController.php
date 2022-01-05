@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
-        return view('BackOffice.adminHome');
+        return view('BackOffice.Accueil');
     }
 }

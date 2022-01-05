@@ -21,6 +21,11 @@ Route::get('/Liste-Des-Voeux', function () {
     return view('FrontOffice.WishList');
 })->name("wish_list");
 
+Route::get('/A-Propos', function () {
+    return view('FrontOffice.Apropos');
+})->name("a_propos");
+
+// Panier & gestion des commandes -FrontOffice-
 Route::get('/Mon-Panier', "PanierController@panier")->name("mon_panier");
 Route::post('/Ajout-Au-Panier-Produit-{id_produit}-Quantite-{quantite}', "PanierController@ajout_panier")->name("ajout_panier");
 Route::post('/Supprimer-Du-Panier-Produit-{id_produit}', "PanierController@supprimer_panier")->name("supprimer_panier");
@@ -30,15 +35,20 @@ Route::post('/Valider-Mon-Paiement', "PanierController@valider_commande_paiement
 Route::get('/Mes-Commandes', "PanierController@mes_commandes")->name("mes_commandes")->middleware('auth');
 Route::get('/Imprimer-Bon-Commande-{commande}', "PanierController@imprimer_bon_commande")->name("imprimer_bon_commande")->middleware('auth');
 
+// Recherche multicritéres et choix des ouvrage -FrontOffice-
 Route::get('/Liste-Des-Ouvrages', "AccueilController@liste_des_ouvrages")->name("liste_des_ouvrages");
 
+// Contact et soumision des bons de commandes -FrontOffice-
 Route::get('/Contactez-Nous', "ContactController@contactez_nous")->name("contactez_nous");
 Route::post('/Contactez-Nous', "ContactController@post_contactez_nous")->name("post_contactez_nous");
 
-Route::get('/A-Propos', function () {
-    return view('FrontOffice.Apropos');
-})->name("a_propos");
+// Accueil de l'admin -BackOffice-
+Route::get('/The-Dashboard', 'HomeController@adminHome')->name('admin_home')->middleware('is_admin');
 
+// Gestion des ouvrages
+Route::get('/Gestion-Des-Ouvrages', 'GestionOuvragesController@index')->name('gestion_ouvrages')->middleware('is_admin');
+Route::post('/Modifier-Un-Ouvrage/{ouvrage}', 'GestionOuvragesController@modifier_ouvrage')->name('modifier_ouvrage')->middleware('is_admin');
+
+
+// Scaffold d'authentification AUTH : généré automatiquement lors du build
 Auth::routes();
-
-Route::get('admin/home', 'HomeController@adminHome')->name('admin_home')->middleware('is_admin');

@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class IsAdmin
 {
@@ -15,9 +16,9 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->user()->is_admin) {
-            return $next($request);
-        }
+        if (Auth::check())
+            if (auth()->user()->is_admin)
+                return $next($request);
 
         return redirect()->route('accueil_front_office')->with("error", "vous n'avez pas le role admin.");
     }

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/style_back_office.css') }}">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     @section('styles')
     @show
@@ -28,14 +29,14 @@
                     </a>
                 </h1>
                 <ul class="list-unstyled components mb-5">
-                    <li class="{{ Route::getCurrentRoute()->getName() == 'admin_home' ? 'active' : '' }}">
+                    <li class="{{ Route::currentRouteName() == 'admin_home' ? 'active' : '' }}">
                         <a href="{{ route('admin_home') }}">
                             <span class="fa fa-home mr-3"></span>
                             Accueil
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li class="{{ Route::currentRouteName() == 'gestion_membres' ? 'active' : '' }}">
+                        <a href="{{ route('gestion_membres') }}">
                             <span class="fa fa-user mr-3"></span>
                             Membres
                         </a>
@@ -46,7 +47,7 @@
                             Commandes
                         </a>
                     </li>
-                    <li class="{{ Route::getCurrentRoute()->getName() == 'gestion_ouvrages' ? 'active' : '' }}">
+                    <li class="{{ Route::currentRouteName() == 'gestion_ouvrages' ? 'active' : '' }}">
                         <a href="{{ route('gestion_ouvrages') }}">
                             <span class="fa fa-sticky-note mr-3"></span>
                             Ouvrages
@@ -85,10 +86,13 @@
             @show
         </div>
     </div>
-    <script src="{{ asset('assets/js/backOffice/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/backOffice/popper.js') }}"></script>
     <script src="{{ asset('assets/js/backOffice/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/backOffice/main.js') }}"></script>
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/colreorder/1.5.4/js/dataTables.colReorder.min.js"></script>
+
     @section('scripts')
     @show
 </body>

@@ -51,6 +51,9 @@ Route::post('/The-Dashboard/Gestion-Des-Ouvrages/Ajouter-Un-Ouvrage', 'GestionOu
 Route::post('/The-Dashboard/Gestion-Des-Ouvrages/Modifier-Un-Ouvrage/{ouvrage}', 'GestionOuvragesController@modifier_ouvrage')->name('modifier_ouvrage')->middleware('is_admin');
 Route::post('/The-Dashboard/Gestion-Des-Ouvrages/Supprimer-Un-Ouvrage/{ouvrage}', 'GestionOuvragesController@supprimer_ouvrage')->name('supprimer_ouvrage')->middleware('is_admin');
 
+// Gestion des membres
+Route::get('/The-Dashboard/Gestion-Des-Membres', 'GestionMembresController@index')->name('gestion_membres')->middleware('is_admin');
+Route::post('/The-Dashboard/Gestion-Des-Membres/Ajouter-Un-Membre', 'GestionMembresController@ajouter_membre')->name('ajouter_membre')->middleware('is_admin');
 
 // Scaffold d'authentification AUTH : généré automatiquement lors du build
 Auth::routes();

@@ -47,6 +47,34 @@ class GestionMembresController extends Controller
 
         return redirect()
             ->route("gestion_membres")
-            ->with("success", "Nouveau membre ajouté avec succès #MM$id");
+            ->with("success", "Nouveau membre ajouté avec succès #MUID$id");
+    }
+
+    public function modifier_membre(User $membre, Request $request)
+    {
+        $request->validate(
+            [
+                'nom' => ['required', 'string', 'max:255'],
+                'prenom' => ['required', 'string', 'max:255'],
+                'date_naissance' => ['required', 'date'],
+                'adresse' => ['required', 'string', 'max:255'],
+                'phone' => ['required', 'string', 'max:20'],
+                'password' => ['required', 'string', 'min:6'],
+            ]
+        );
+
+        return redirect()
+            ->route("gestion_membres")
+            ->with("success", "Membre #MUID$membre->id modifié avec succès");
+    }
+
+    public function supprimer_membre(User $membre)
+    {
+        $membre->update([
+            "is_actif" => !$membre->is_actif,
+        ]);
+        return redirect()
+            ->route("gestion_membres")
+            ->with("success", "Membre #MUID$membre->id rectifié avec succès.");
     }
 }

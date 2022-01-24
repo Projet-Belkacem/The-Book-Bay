@@ -1,16 +1,17 @@
-<div class="modal fade" id="ajouter-membre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+@foreach ($membres as $membre)
+<div class="modal fade" id="modifier-membre-{{ $membre->id }}" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                    Ajouter un nouveau Membre
+            <div class="modal-header bg-primary">
+                <h5 class="modal-title text-white" id="exampleModalLabel">
+                    Modifier le Membre #MUID{{ $membre->id }}
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('ajouter_membre') }}" method="POST" autocomplete="off">
+            <form action="{{ route('modifier_membre', ['membre'=> $membre->id]) }}" method="POST" autocomplete="off">
                 @csrf
                 <div class="modal-body">
                     <div class="row">
@@ -21,7 +22,8 @@
                                         Nom :
                                     </th>
                                     <td>
-                                        <input type="text" name="nom" class="form-control" required>
+                                        <input type="text" name="nom" class="form-control" value="{{ $membre->nom }}"
+                                            required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -29,7 +31,8 @@
                                         Prenom :
                                     </th>
                                     <td>
-                                        <input type="text" name="prenom" class="form-control" required>
+                                        <input type="text" name="prenom" class="form-control"
+                                            value="{{ $membre->prenom }}" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -38,7 +41,7 @@
                                     </th>
                                     <td>
                                         <input type="date" step="0.01" name="date_naissance" class="form-control"
-                                            required>
+                                            value="{{ $membre->date_naissance }}" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -46,7 +49,8 @@
                                         Télephone :
                                     </th>
                                     <td>
-                                        <input type="text" name="phone" class="form-control" required>
+                                        <input type="text" name="phone" class="form-control"
+                                            value="{{ $membre->phone }}" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -54,7 +58,8 @@
                                         Email :
                                     </th>
                                     <td>
-                                        <input type="email" name="email" class="form-control" required>
+                                        <input type="email" name="email" class="form-control"
+                                            value="{{ $membre->email }}" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -62,7 +67,7 @@
                                         Mot de Passe :
                                     </th>
                                     <td>
-                                        <input type="password" minlength="6" name="password" class="form-control"
+                                        <input type="password" minlength="6" name="password" class="form-control" autocomplete="off"
                                             required>
                                     </td>
                                 </tr>
@@ -75,10 +80,10 @@
                                             <option value selected disabled>
                                                 -Sélectionner-
                                             </option>
-                                            <option value="ADMIN">
+                                            <option value="ADMIN" {{ $membre->is_admin ? "selected" : "" }}>
                                                 Admin
                                             </option>
-                                            <option value="MEMBRE">
+                                            <option value="MEMBRE" {{ $membre->is_admin ? "" : "selected" }}>
                                                 Membre
                                             </option>
                                         </select>
@@ -89,10 +94,17 @@
                                         Etat :
                                     </th>
                                     <td class="text-left">
+                                        @if ($membre->is_actif)
                                         <span class="badge badge-success">
                                             <i class="fa fa-check-circle" aria-hidden="true"></i>
                                             Actif
                                         </span>
+                                        @else
+                                        <span class="badge badge-danger">
+                                            <i class="fa fa-ban" aria-hidden="true"></i>
+                                            Bloqué(e)
+                                        </span>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
@@ -100,7 +112,8 @@
                                         Adresse :
                                     </th>
                                     <td>
-                                        <textarea name="adresse" class="w-100" rows="4" required></textarea>
+                                        <textarea name="adresse" class="w-100" rows="4"
+                                            required>{{ $membre->adresse }}</textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -111,11 +124,12 @@
                     <button type="button" class="btn btn-light" data-dismiss="modal">
                         Annuler
                     </button>
-                    <button type="submit" class="btn btn-success bg-success">
-                        Enregistrer
+                    <button type="submit" class="btn btn-primary bg-primary">
+                        Confirmer
                     </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+@endforeach

@@ -7,6 +7,13 @@
 <div class="section">
     <div class="container">
         <div class="row">
+            <div class="col-md-12 text-center">
+                <u>
+                    <h1>
+                        Imprimer le bon de commande
+                    </h1>
+                </u>
+            </div>
             <div class="col-md-12 text-right mb-2">
                 <a href="#;" id="btnImpression" class="btn btn-sm btn-success">
                     Imprimer

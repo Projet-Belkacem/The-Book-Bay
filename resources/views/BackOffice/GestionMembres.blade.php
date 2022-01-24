@@ -54,13 +54,22 @@
                     @foreach ($membres as $membre)
                     <tr>
                         <td>
-                            <a href="#" class="text-primary">
+                            <a href="#" class="text-primary" data-toggle="modal"
+                                data-target="#modifier-membre-{{ $membre->id }}">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             </a>
                             |
-                            <a href="#" class="text-danger">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            @if ($membre->is_actif)
+                            <a href="#" class="text-danger" data-toggle="modal"
+                                data-target="#supprimer-membre-{{ $membre->id }}">
+                                <i class="fa fa-ban" aria-hidden="true" title="Bloquer"></i>
                             </a>
+                            @else
+                            <a href="#" class="text-success" data-toggle="modal"
+                                data-target="#supprimer-membre-{{ $membre->id }}">
+                                <i class="fa fa-check-circle" aria-hidden="true" title="Débloquer"></i>
+                            </a>
+                            @endif
                         </td>
                         <td>
                             #MUID{{ $membre->id }}
@@ -114,6 +123,8 @@
 </div>
 
 @include('BackOffice._modalAjouterMembre')
+@include('BackOffice._modalSupprimerMembre')
+@include('BackOffice._modalModifierMembre')
 @endsection
 
 @section('scripts')

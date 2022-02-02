@@ -16,9 +16,8 @@ class CreateCommandesTable extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
             $table->string("etat");
-            // $table->float("montant_total");
             $table->date("date_debut_commande");
-            // $table->foreignId('user_id')->constrained();
+            $table->date("date_fin_commande")->nullable();
         });
     }
 

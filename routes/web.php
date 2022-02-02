@@ -60,6 +60,8 @@ Route::post('/The-Dashboard/Gestion-Des-Membres/Supprimer-Un-Membre/{membre}', '
 
 // Gestion des Commandes
 Route::get('/The-Dashboard/Gestion-Des-Commandes', 'GestionCommandesController@index')->name('gestion_commandes')->middleware('is_admin');
+Route::post('/The-Dashboard/Gestion-Des-Commandes/Confirmation-Commande/{commande}', 'GestionCommandesController@confirmation_commande')->name('confirmation_commande')->middleware('is_admin');
+Route::post('/The-Dashboard/Gestion-Des-Commandes/Annulation-Commande/{commande}', 'GestionCommandesController@annulation_commande')->name('annulation_commande')->middleware('is_admin');
 
 
 // Scaffold d'authentification AUTH : généré automatiquement lors du build

@@ -12,6 +12,9 @@
                     <h1>
                         Imprimer le bon de commande
                     </h1>
+                    <h3>
+                        Réf : #CMD-REF-CR{{ $lignes_commande->first()->commande->id }}
+                    </h3>
                 </u>
             </div>
             <div class="col-md-12 text-right mb-2">
@@ -20,8 +23,13 @@
                 </a>
             </div>
             <div class="col-md-12">
-                <table class="andro_responsive-table" id="table-commande">
+                <table class="table table-bordered table-stripped w-100" id="table-commande">
                     <thead>
+                        <tr>
+                            <th colspan="3" class="text-center">
+                                Réf : #CMD-REF-CR{{ $lignes_commande->first()->commande->id }}
+                            </th>
+                        </tr>
                         <tr>
                             <th>Ouvrage</th>
                             <th>Prix</th>

@@ -51,9 +51,10 @@
                 </div>
                 <div class="modal-body">
                     <div class="andro_newsletter-popup-text-wrapper">
-                        <h3>Join Our Newsletter</h3>
-                        <p>Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                            Curabitur aliquet quam id dui posuere.</p>
+                        <h3>Rejoignez-nous</h3>
+                        <p>
+                            Pour ne rater aucune actualités, abonner-vous à notre newsletter afin de rester à jour sur notre gamme de produits
+                        </p>
                     </div>
                     <form method="post" class="text-center">
                         <div class="form-group">
@@ -225,7 +226,7 @@
                     </a>
                     <!-- Search Form -->
                     <div class="andro_search-adv">
-                        <form method="post">
+                        <form action="#;">
                             <div class="andro_search-adv-cats">
                                 <span>
                                     <i class="fas fa-book-reader"></i>
@@ -425,6 +426,13 @@
                                     Mes Commandes
                                 </a>
                             </li>
+                            @if (Auth::user()->is_admin)
+                            <li>
+                                <a href="{{ route('admin_home') }}">
+                                    Administration
+                                </a>
+                            </li>
+                            @endif
                             @endauth
                         </ul>
                     </div>

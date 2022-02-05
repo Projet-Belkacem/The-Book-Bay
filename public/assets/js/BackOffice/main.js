@@ -1,32 +1,32 @@
 $(document).ready(function () {
-    var trigger = $('.hamburger'),
-        overlay = $('.overlay'),
-        isClosed = false;
-
-    trigger.click(function () {
-        hamburger_cross();
-    });
-
-    function hamburger_cross() {
-
-        if (isClosed == true) {
-            overlay.hide();
-            trigger.removeClass('is-open');
-            trigger.addClass('is-closed');
-            isClosed = false;
+    $(".sidebar-dropdown > a").click(function () {
+        $(".sidebar-submenu").slideUp(200);
+        if (
+            $(this)
+            .parent()
+            .hasClass("active")
+        ) {
+            $(".sidebar-dropdown").removeClass("active");
+            $(this)
+                .parent()
+                .removeClass("active");
         } else {
-            overlay.show();
-            trigger.removeClass('is-closed');
-            trigger.addClass('is-open');
-            isClosed = true;
+            $(".sidebar-dropdown").removeClass("active");
+            $(this)
+                .next(".sidebar-submenu")
+                .slideDown(200);
+            $(this)
+                .parent()
+                .addClass("active");
         }
-    }
-
-    $('[data-toggle="offcanvas"]').click(function () {
-        $('#wrapper').toggleClass('toggled');
     });
 
-    trigger.click()
+    $("#close-sidebar").click(function () {
+        $(".page-wrapper").removeClass("toggled");
+    });
+    $("#show-sidebar").click(function () {
+        $(".page-wrapper").addClass("toggled");
+    });
 
     $.ajaxSetup({
         headers: {

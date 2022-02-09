@@ -6,11 +6,47 @@
         <div class="card">
             <div class="card-header">
                 <h3>
-                    Totale des ventes par mois
+                    Totale des ventes/mois
                 </h3>
             </div>
             <div class="card-body">
                 <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                <h3>
+                    Ensemble des admins
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-stripped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Admin
+                                </th>
+                                <th>
+                                    Phone
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($admins as $admin)
+                            <tr>
+                                <td>{{ $admin->nom }} {{ $admin->prenom }}</td>
+                                <td> (+212) {{ $admin->phone }}</td>
+                                <td>{{ $admin->email }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -18,7 +54,7 @@
         <div class="card">
             <div class="card-header">
                 <h3>
-                   Répartition des ventes/ville
+                    Répartition des ventes/ville
                 </h3>
             </div>
             <div class="card-body">

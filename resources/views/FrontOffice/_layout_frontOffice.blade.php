@@ -61,8 +61,8 @@
                             <input type="email" placeholder="Email Address" class="form-control" name="newsletter-email"
                                 value="">
                         </div>
-                        <button type="submit" class="andro_btn-custom" name="button">Subscribe</button>
-                        <span class="newsletter-popup-trigger" data-dismiss="modal">No Thanks</span>
+                        <button type="submit" class="andro_btn-custom" name="button">S'abonner</button>
+                        <span class="newsletter-popup-trigger" data-dismiss="modal">Non merci</span>
                     </form>
                 </div>
             </div>

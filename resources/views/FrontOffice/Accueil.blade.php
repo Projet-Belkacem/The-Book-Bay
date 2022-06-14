@@ -38,7 +38,7 @@
                                 </div>
                                 <a href="product-single.html" class="andro_btn-custom btn-sm">Acheter </a>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                     <div class="col-lg-6">
                         <p>Utilisez le code <strong class="custom-primary">Book991</strong> lors du paiement</p>

@@ -151,11 +151,11 @@
                     Contactez-nous
                 </a>
             </li>
-            <li class="menu-item">
+            <!-- <li class="menu-item">
                 <a href="{{ route('a_propos') }}">
                     A propos
                 </a>
-            </li>
+            </li> -->
             @auth
             <li class="menu-item">
                 <a href="{{ route('mes_commandes') }}">
@@ -334,27 +334,27 @@
                         </div>
                     </div>
                     <!-- Menu -->
-                    <ul class="navbar-nav">
-                        <li class="menu-item">
+                    <ul class="navbar-nav ml-5">
+                        <li class="menu-item ml-4">
                             <a href="{{ route('accueil_front_office') }}">
                                 Accueil
                             </a>
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item ml-4">
                             <a href="{{ route('liste_des_ouvrages') }}">
                                 Ouvrages
                             </a>
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item ml-4 mr-4">
                             <a href="{{ route('contactez_nous') }}">
                                 Contactez-nous
                             </a>
                         </li>
-                        <li class="menu-item">
+                        <!-- <li class="menu-item">
                             <a href="{{ route('a_propos') }}">
                                 A propos
                             </a>
-                        </li>
+                        </li> -->
                         @auth
                         <li class="menu-item">
                             <a href="{{ route('mes_commandes') }}">
@@ -415,11 +415,11 @@
                                     Contactez-nous
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="{{ route('a_propos') }}">
                                     A propos
                                 </a>
-                            </li>
+                            </li> -->
                             @auth
                             <li>
                                 <a href="{{ route('mes_commandes') }}">

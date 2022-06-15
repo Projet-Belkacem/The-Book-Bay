@@ -56,7 +56,7 @@
                 <div class="sidebar-menu">
                     <ul>
                         <li class="header-menu">
-                            <span>General</span>
+                            <span>Géneral</span>
                         </li>
                         <li>
                             <a href="{{ route('admin_home') }}"
@@ -100,9 +100,9 @@
                     All rights reserved L'équipe
                     The-Book-Bay
                     <br>
-                    <a href="#;">-Ecole SupMTI-</a>
+                    <a href="#;">-Groupe SupMTI-</a>
                     <br>
-                    Groupe ISI5 GS
+                    Groupe 2GI GS
                 </p>
             </div>
         </nav>

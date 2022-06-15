@@ -151,11 +151,11 @@
                     Contactez-nous
                 </a>
             </li>
-            <!-- <li class="menu-item">
+            <li class="menu-item">
                 <a href="{{ route('a_propos') }}">
                     A propos
                 </a>
-            </li> -->
+            </li> 
             @auth
             <li class="menu-item">
                 <a href="{{ route('mes_commandes') }}">
@@ -350,11 +350,11 @@
                                 Contactez-nous
                             </a>
                         </li>
-                        <!-- <li class="menu-item">
+                        <li class="menu-item">
                             <a href="{{ route('a_propos') }}">
                                 A propos
                             </a>
-                        </li> -->
+                        </li> 
                         @auth
                         <li class="menu-item">
                             <a href="{{ route('mes_commandes') }}">
@@ -415,11 +415,11 @@
                                     Contactez-nous
                                 </a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a href="{{ route('a_propos') }}">
                                     A propos
                                 </a>
-                            </li> -->
+                            </li> 
                             @auth
                             <li>
                                 <a href="{{ route('mes_commandes') }}">

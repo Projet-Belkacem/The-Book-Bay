@@ -13,16 +13,14 @@
             </div>
             <div class="col-lg-6">
                 <div class="section-title-wrap mr-lg-30">
-                    <h2 class="title">Serving <span class="custom-primary">Amazing Books</span> Since 1922</h2>
+                    <h2 class="title">Au service <span class="custom-primary"> de livres étonnants </span> depuis 1998</h2>
                     <p class="subtitle">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the
-                        printing and typesetting industry.
+                      BOOKBAY est un grand libraire d'occasion basé sur le Web dont le siège se trouve près de Seattle,
+                     dans l'État de Washington. BOOKBAY vend des livres,
+                     des DVD, des CD, des cassettes VHS, des jeux vidéo et des cassettes audio d'occasion.
                     </p>
-                    <p class="subtitle">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </p>
-                    <a href="shop-v1.html" class="andro_btn-custom">Browse Our Shop</a>
+                    
+                    <a href="Liste-Des-Ouvrages" class="andro_btn-custom">Parcourir notre boutique</a>
                 </div>
             </div>
         </div>
@@ -34,10 +32,10 @@
     <div class="container">
         <div class="andro_cta-notice secondary-bg pattern-bg">
             <div class="andro_cta-notice-inner">
-                <h3 class="text-white">Buy Today and Get 20% Off</h3>
-                <p class="text-white">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula
+                <h3 class="text-white">Achetez aujourd'hui et obtenez 20 % de réduction</h3>
+                <p class="text-white">C'est la semaine des promotions, profitez de la réduction jusqu'à 20%. Cras ultricies ligula
                     sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-                <a href="#" class="andro_btn-custom light">Shop Now</a>
+                <a href="Liste-Des-Ouvrages" class="andro_btn-custom light">Acheter maintenant </a>
             </div>
         </div>
     </div>
@@ -53,7 +51,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="section-title-wrap mr-lg-30">
-                    <h2 class="title">Serving <span class="custom-primary">Amazing Books</span> Since 1922</h2>
+                    <h2 class="title">Au service  <span class="custom-primary">de livres étonnants</span> depuis 1998 </h2>
                     <p class="subtitle">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the
@@ -68,7 +66,7 @@
                         <li>Lorem Ipsum has been the industry's standard dummy text ever</li>
                         <li>Lorem Ipsum has been the industry's standard dummy</li>
                     </ul>
-                    <a href="shop-v1.html" class="andro_btn-custom">Browse Our Shop</a>
+                    <a href="Liste-Des-Ouvrages" class="andro_btn-custom">Parcourir notre boutique</a>
                 </div>
             </div>
         </div>
@@ -79,14 +77,14 @@
 <div class="section section-padding pt-0">
     <div class="container">
         <div class="section-title">
-            <h4 class="title">What Are People Saying</h4>
+            <h4 class="title">Avis des clients</h4>
         </div>
         <div class="row">
             <!-- Testimonail item start -->
             <div class="col-lg-4 col-md-6">
                 <div class="andro_testimonial">
                     <div class="andro_testimonial-body">
-                        <h5>Perfect service</h5>
+                        <h5>Service parfait</h5>
                         <div class="andro_rating-wrapper">
                             <div class="andro_rating">
                                 <i class="fas fa-star active"></i>
@@ -113,7 +111,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="andro_testimonial">
                     <div class="andro_testimonial-body">
-                        <h5>Competitive prices</h5>
+                        <h5>Prix ​​compétitifs</h5>
                         <div class="andro_rating-wrapper">
                             <div class="andro_rating">
                                 <i class="fas fa-star active"></i>
@@ -140,7 +138,7 @@
             <div class="col-lg-4 col-md-12">
                 <div class="andro_testimonial">
                     <div class="andro_testimonial-body">
-                        <h5>Great agents</h5>
+                        <h5>Grands agents</h5>
                         <div class="andro_rating-wrapper">
                             <div class="andro_rating">
                                 <i class="fas fa-star active"></i>

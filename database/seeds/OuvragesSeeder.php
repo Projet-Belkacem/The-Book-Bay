@@ -35,9 +35,9 @@ class OuvragesSeeder extends Seeder
         $ouvrages = [
             [
                 "titre" => "Harry Potter et les reliques de la mort",
-                "prix" => 120.25,
+                "prix" => 80,
                 "auteur" => "J.K Rowling",
-                "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repellat nostrum vel, sunt consectetur dolorum sint amet fuga esse quisquam numquam cupiditate! Eveniet suscipit accusantium aspernatur corrupti excepturi hic natus vitae necessitatibus, beatae neque ipsum provident architecto mollitia eius magni sint ut, perferendis dolorum voluptas impedit sequi eaque harum. Corrupti sit est labore, quos ipsum, laborum qui officia sapiente veniam exercitationem quibusdam quis. Non, deleniti eum, aut id quas aspernatur recusandae ut nam quisquam atque sapiente rerum asperiores possimus ipsam assumenda. Minima temporibus libero optio ducimus, iusto, at pariatur, vel corrupti ex molestias fugit veritatis laborum cupiditate enim fuga! Tempora!",
+                "description" => "Sans les conseils et la protection de leurs professeurs, Harry, Ron et Hermione ont pour mission de détruire les horcruxes, les origines de l'immortalité de Voldemort. Bien que plus que jamais ils doivent compter l'un sur l'autre, les forces du mal menacent de les désunir.",
                 "chemin_photo_couverture" => "uploads/images/ouvrages/sample_harry_potter.jpeg",
                 "quantite_actuelle" => 56,
                 "theme_id" => 3
@@ -45,7 +45,7 @@ class OuvragesSeeder extends Seeder
                 "titre" => "Le livre de la jungle",
                 "prix" => 99.49,
                 "auteur" => "Rudyard Kipling",
-                "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repellat nostrum vel, sunt consectetur dolorum sint amet fuga esse quisquam numquam cupiditate! Eveniet suscipit accusantium aspernatur corrupti excepturi hic natus vitae necessitatibus, beatae neque ipsum provident architecto mollitia eius magni sint ut, perferendis dolorum voluptas impedit sequi eaque harum. Corrupti sit est labore, quos ipsum, laborum qui officia sapiente veniam exercitationem quibusdam quis. Non, deleniti eum, aut id quas aspernatur recusandae ut nam quisquam atque sapiente rerum asperiores possimus ipsam assumenda. Minima temporibus libero optio ducimus, iusto, at pariatur, vel corrupti ex molestias fugit veritatis laborum cupiditate enim fuga! Tempora!",
+                "description" => "La panthère Baghéera découvre dans la jungle un jeune enfant abandonné. Elle décide de le confier à une famille de loups qui l'élève comme un louveteau. Alors que Mowgli a 10 ans, le tigre Shere Kahn approche du territoire des loups",
                 "chemin_photo_couverture" => "uploads/images/ouvrages/sample_livre_jungle.jpeg",
                 "quantite_actuelle" => 99,
                 "theme_id" => 1
@@ -53,7 +53,7 @@ class OuvragesSeeder extends Seeder
                 "titre" => "Indiana Jones",
                 "prix" => 126.99,
                 "auteur" => "Henry Jones Senior",
-                "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repellat nostrum vel, sunt consectetur dolorum sint amet fuga esse quisquam numquam cupiditate! Eveniet suscipit accusantium aspernatur corrupti excepturi hic natus vitae necessitatibus, beatae neque ipsum provident architecto mollitia eius magni sint ut, perferendis dolorum voluptas impedit sequi eaque harum. Corrupti sit est labore, quos ipsum, laborum qui officia sapiente veniam exercitationem quibusdam quis. Non, deleniti eum, aut id quas aspernatur recusandae ut nam quisquam atque sapiente rerum asperiores possimus ipsam assumenda. Minima temporibus libero optio ducimus, iusto, at pariatur, vel corrupti ex molestias fugit veritatis laborum cupiditate enim fuga! Tempora!",
+                "description" => "Henry Walton Jones Jr., alias Indiana Jones est un personnage de fiction, aventurier et professeur d'archéologie, créé par George Lucas. Incarné par l'acteur Harrison Ford, il apparaît pour la première fois dans le film Les Aventuriers de l'arche perdue réalisé par Steven Spielberg",
                 "chemin_photo_couverture" => "uploads/images/ouvrages/sample_indiana_jones.jpeg",
                 "quantite_actuelle" => 12,
                 "theme_id" => 4
